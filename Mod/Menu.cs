@@ -63,7 +63,7 @@ namespace Mod
                 }
             }
 
-            Settings.useLootFilter = GUILayout.Toggle(Settings.useLootFilter, "Use Loot Filter");
+            //Settings.useLootFilter = GUILayout.Toggle(Settings.useLootFilter, "Use Loot Filter");
             Settings.mapHack = GUILayout.Toggle(Settings.mapHack, "Map Hack");
 
             GUILayout.BeginHorizontal();

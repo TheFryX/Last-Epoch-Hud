@@ -3,7 +3,7 @@ using Mod.Cheats;
 using Mod.Cheats.ESP;
 using Mod.Game;
 
-[assembly: MelonInfo(typeof(Mod.Mod), "Mod", "1.0.0", "ItsJustMeChris")]
+[assembly: MelonInfo(typeof(Mod.Mod), "Mod", "0.1.0", "Daxx")]
 [assembly: MelonGame("Eleventh Hour Games", "Last Epoch")]
 
 namespace Mod
@@ -12,9 +12,9 @@ namespace Mod
     {
         public const string Name = "Mod"; // Name of the Mod.  (MUST BE SET)
         public const string Description = "Mod for Testing"; // Description for the Mod.  (Set as null if none)
-        public const string Author = "ItsJustMeChris"; // Author of the Mod.  (MUST BE SET)
+        public const string Author = "Daxx"; // Author of the Mod.  (MUST BE SET)
         public const string Company = null; // Company that made the Mod.  (Set as null if none)
-        public const string Version = "1.0.0"; // Version of the Mod.  (MUST BE SET)
+        public const string Version = "0.1.0"; // Version of the Mod.  (MUST BE SET)
         public const string DownloadLink = null; // Download Link for the Mod.  (Set as null if none)
     }
 

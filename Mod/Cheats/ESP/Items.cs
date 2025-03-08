@@ -29,9 +29,11 @@ namespace Mod.Cheats.ESP
 
                 if (Vector3.Distance(ObjectManager.GetLocalPlayer().transform.position, item.transform.position) > Settings.drawDistance) continue;
 
-                Rule.RuleOutcome filter = ItemFiltering.Match(item.itemData, null, null);
+                //item filtering stopped working as of at least 1.7.7, possibly much earlier
+                //disabling it for now
+                //Rule.RuleOutcome filter = ItemFiltering.Match(item.itemData, null, null);
 
-                if (Settings.useLootFilter && filter == Rule.RuleOutcome.HIDE) continue;
+                //if (Settings.useLootFilter && filter == Rule.RuleOutcome.HIDE) continue;
 
                 var rarity = item.groundItemRarityVisuals.name;
 
