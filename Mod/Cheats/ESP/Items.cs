@@ -22,7 +22,7 @@ namespace Mod.Cheats.ESP
         {
             if (GroundItemVisuals.all == null) return;
 
-            foreach (var item in GroundItemVisuals.all)
+            foreach (var item in GroundItemVisuals.all._list)
             {
                 // Ensure the item is active in the scene
                 if (!item.gameObject.activeInHierarchy) return;

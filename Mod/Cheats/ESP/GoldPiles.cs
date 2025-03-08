@@ -18,7 +18,7 @@ namespace Mod.Cheats.ESP
             if (!Settings.DrawGoldPiles()) return;
             if (GroundGoldVisuals.all == null) return;
 
-            foreach (var item in GroundGoldVisuals.all)
+            foreach (var item in GroundGoldVisuals.all._list)
             {
                 if (!item.gameObject.activeInHierarchy) return;
                 if (Vector3.Distance(ObjectManager.GetLocalPlayer().transform.position, item.transform.position) > Settings.drawDistance) continue;

@@ -49,7 +49,7 @@ namespace Mod.Cheats.ESP
 
                 var color = Drawing.AlignmentToColor(visual.alignment.name);
 
-                foreach (var actor in visual.visuals)
+                foreach (var actor in visual.visuals._list)
                 {
                     if (!actor.gameObject.activeInHierarchy) continue;
                     if (actor.GetComponent<ActorDisplayInformation>() != null && !Settings.ShouldDrawNPCClassification(actor.GetComponent<ActorDisplayInformation>().actorClass)) continue;
