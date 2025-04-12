@@ -25,26 +25,31 @@ namespace Mod.Cheats.ESP
             foreach (var item in GroundItemVisuals.all._list)
             {
                 // Ensure the item is active in the scene
-                if (!item.gameObject.activeInHierarchy) return;
+                if (item?.gameObject == null || !item.gameObject.activeInHierarchy) return;
 
-                if (Vector3.Distance(ObjectManager.GetLocalPlayer().transform.position, item.transform.position) > Settings.drawDistance) continue;
+                var localPlayer = ObjectManager.GetLocalPlayer();
+                if (localPlayer == null || localPlayer.transform == null) return;
+
+                if (Vector3.Distance(localPlayer.transform.position, item.transform.position) > Settings.drawDistance) continue;
 
                 //item filtering stopped working as of at least 1.7.7, possibly much earlier
                 //disabling it for now
                 //Rule.RuleOutcome filter = ItemFiltering.Match(item.itemData, null, null);
 
+
                 //if (Settings.useLootFilter && filter == Rule.RuleOutcome.HIDE) continue;
 
-                var rarity = item.groundItemRarityVisuals.name;
+                var rarity = item.groundItemRarityVisuals?.name;
 
-                if (!Settings.ShouldDrawItemRarity(rarity))
+                // Ensure rarity is not null before calling ShouldDrawItemRarity
+                if (rarity == null || !Settings.ShouldDrawItemRarity(rarity))
                 {
                     continue;
                 }
 
                 var color = Drawing.ItemRarityToColor(rarity);
 
-                ESP.AddLine(ObjectManager.GetLocalPlayer().transform.position, item.transform.position, color);
+                ESP.AddLine(localPlayer.transform.position, item.transform.position, color);
                 ESP.AddString(item.itemData.FullName, item.transform.position, color);
             }
         }

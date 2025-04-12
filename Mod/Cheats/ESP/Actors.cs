@@ -43,6 +43,9 @@ namespace Mod.Cheats.ESP
         {
             if (ActorManager.instance == null) return;
 
+            var localPlayer = ObjectManager.GetLocalPlayer();
+            if (localPlayer == null) return; // Ensure localPlayer is not null
+
             foreach (var visual in ActorManager.instance.visuals)
             {
                 if (!Settings.ShouldDrawNPCAlignment(visual.alignment.name)) continue;
@@ -54,7 +57,7 @@ namespace Mod.Cheats.ESP
                     if (!actor.gameObject.activeInHierarchy) continue;
                     if (actor.GetComponent<ActorDisplayInformation>() != null && !Settings.ShouldDrawNPCClassification(actor.GetComponent<ActorDisplayInformation>().actorClass)) continue;
 
-                    float distance = Vector3.Distance(actor.transform.position, ObjectManager.GetLocalPlayer().transform.position);
+                    float distance = Vector3.Distance(actor.transform.position, localPlayer.transform.position);
 
                     if (distance >= Settings.drawDistance || actor.dead) continue;
 
@@ -63,7 +66,7 @@ namespace Mod.Cheats.ESP
                     var position = actor.GetHealthBarPosition();
                     position.y += 0.5f;
 
-                    ESP.AddLine(ObjectManager.GetLocalPlayer().transform.position, actor.transform.position, color);
+                    ESP.AddLine(localPlayer.transform.position, actor.transform.position, color);
                     ESP.AddString(name + " (" + distance.ToString("F1") + ")", position, color);
                 }
             }

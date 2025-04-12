@@ -27,7 +27,11 @@ namespace Mod.Cheats
 
             if (localPlayer == null) return;
 
-            localPlayer.GetComponent<HealthPotion>().UsePotion();
+            var healthPotion = localPlayer.GetComponent<HealthPotion>();
+            if (healthPotion != null)
+            {
+                healthPotion.UsePotion();
+            }
         }
 
         public static void OnUpdate()
@@ -36,7 +40,10 @@ namespace Mod.Cheats
 
             var localPlayer = ObjectManager.GetLocalPlayer();
 
-            if (localPlayer.GetComponent<PlayerHealth>().getHealthPercent() * 100 <= Settings.autoHealthPotion)
+            if (localPlayer == null) return;
+
+            var playerHealth = localPlayer.GetComponent<PlayerHealth>();
+            if (playerHealth != null && playerHealth.getHealthPercent() * 100 <= Settings.autoHealthPotion)
             {
                 UseHealthPotion();
             }

@@ -20,10 +20,14 @@ namespace Mod.Cheats.ESP
 
             foreach (var item in GroundGoldVisuals.all._list)
             {
-                if (!item.gameObject.activeInHierarchy) return;
-                if (Vector3.Distance(ObjectManager.GetLocalPlayer().transform.position, item.transform.position) > Settings.drawDistance) continue;
+                if (item?.gameObject == null || !item.gameObject.activeInHierarchy) continue;
 
-                ESP.AddLine(ObjectManager.GetLocalPlayer().transform.position, item.transform.position, Color.white);
+                var localPlayer = ObjectManager.GetLocalPlayer();
+                if (localPlayer?.transform == null) continue;
+
+                if (Vector3.Distance(localPlayer.transform.position, item.transform.position) > Settings.drawDistance) continue;
+
+                ESP.AddLine(localPlayer.transform.position, item.transform.position, Color.white);
                 ESP.AddString(item.goldValue.ToString() + " Gold", item.transform.position, Color.white);
             }
         }
