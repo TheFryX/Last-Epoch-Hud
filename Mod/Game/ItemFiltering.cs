@@ -53,7 +53,7 @@ namespace Mod.Game
             nint num4 = 0;
             *(nint**)num3 = &num4;
 
-            System.IntPtr exc = System.IntPtr.Zero;
+            IntPtr exc = IntPtr.Zero;
 
             var itemFilterType = typeof(ItemFilter).GetField("NativeMethodInfoPtr_Match_Public_RuleOutcome_ItemDataUnpacked_Nullable_1_Int32_Nullable_1_Boolean_0", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static);
 
@@ -70,16 +70,16 @@ namespace Mod.Game
                 return Rule.RuleOutcome.SHOW;
             }
 
-            System.IntPtr? matchMethodNullable = fieldInfo.GetValue(itemFilter) as System.IntPtr?;
-            if (matchMethodNullable == null || matchMethodNullable == System.IntPtr.Zero)
+            IntPtr? matchMethodNullable = fieldInfo.GetValue(itemFilter) as IntPtr?;
+            if (matchMethodNullable == null || matchMethodNullable == IntPtr.Zero)
             {
                 MelonLogger.Error("ItemFiltering.Match: matchMethod is null");
                 return Rule.RuleOutcome.SHOW;
             }
 
-            System.IntPtr matchMethod = matchMethodNullable.Value;
+            IntPtr matchMethod = matchMethodNullable.Value;
 
-            System.IntPtr obj = IL2CPP.il2cpp_runtime_invoke(matchMethod, IL2CPP.Il2CppObjectBaseToPtrNotNull(itemFilter), (void**)ptr, ref exc);
+            IntPtr obj = IL2CPP.il2cpp_runtime_invoke(matchMethod, IL2CPP.Il2CppObjectBaseToPtrNotNull(itemFilter), (void**)ptr, ref exc);
 
             if (obj == IntPtr.Zero)
             {

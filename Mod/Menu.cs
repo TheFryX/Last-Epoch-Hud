@@ -11,7 +11,6 @@ namespace Mod
 {
     internal class Menu
     {
-
         private static bool guiVisible = false;
         private const float resizeGripSize = 20.0f;
         private static bool isResizing = false;
@@ -87,7 +86,6 @@ namespace Mod
             ProcessResizing(resizeGripRect, windowID);
         }
 
-
         private static void ProcessResizing(Rect resizeGripRect, int windowID)
         {
             Event currentEvent = Event.current;
@@ -120,7 +118,6 @@ namespace Mod
                     break;
             }
         }
-
 
         public static Rect windowRect = new Rect(20, 20, 250, 700);
 

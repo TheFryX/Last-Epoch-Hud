@@ -71,7 +71,6 @@ namespace Mod.Cheats.ESP
                 }
             }
         }
-
         public static void OnUpdate()
         {
             if (ObjectManager.HasPlayer())

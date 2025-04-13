@@ -31,7 +31,6 @@ namespace Mod.Cheats.ESP
                 ESP.AddString(item.goldValue.ToString() + " Gold", item.transform.position, Color.white);
             }
         }
-
         public static void OnUpdate()
         {
             if (ObjectManager.HasPlayer())
