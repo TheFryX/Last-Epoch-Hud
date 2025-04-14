@@ -28,7 +28,7 @@ namespace Mod
         {
             //MelonLogger.Msg("OnApplicationStart");
 
-            harmony = new HarmonyLib.Harmony("com.daxx.pantheon.mod");
+            harmony = new HarmonyLib.Harmony("com.daxx.lastepoch.mod");
             //--melonloader.debug startup cmd to enable harmony debugmode
         }
 
@@ -39,12 +39,12 @@ namespace Mod
 
         public override void OnSceneWasLoaded(int buildindex, string sceneName) // Runs when a Scene has Loaded and is passed the Scene's Build Index and Name.
         {
-            MelonLogger.Msg("OnSceneWasLoaded: " + buildindex.ToString() + " | " + sceneName);
+            //MelonLogger.Msg("OnSceneWasLoaded: " + buildindex.ToString() + " | " + sceneName);
         }
 
         public override void OnSceneWasInitialized(int buildindex, string sceneName) // Runs when a Scene has Initialized and is passed the Scene's Build Index and Name.
         {
-            MelonLogger.Msg("OnSceneWasInitialized: " + buildindex.ToString() + " | " + sceneName);
+            //MelonLogger.Msg("OnSceneWasInitialized: " + buildindex.ToString() + " | " + sceneName);
 
             if (harmony != null && !harmonyPatched)
             {
