@@ -20,9 +20,16 @@ namespace Mod
 
     public class Mod : MelonMod
     {
+        private static bool isOnGUI = false;
+        private HarmonyLib.Harmony? harmony;
+        private bool harmonyPatched = false;
+
         public override void OnInitializeMelon()
         {
             //MelonLogger.Msg("OnApplicationStart");
+
+            harmony = new HarmonyLib.Harmony("com.daxx.pantheon.mod");
+            //--melonloader.debug startup cmd to enable harmony debugmode
         }
 
         public override void OnLateInitializeMelon() // Runs after OnApplicationStart.
@@ -32,12 +39,26 @@ namespace Mod
 
         public override void OnSceneWasLoaded(int buildindex, string sceneName) // Runs when a Scene has Loaded and is passed the Scene's Build Index and Name.
         {
-            //MelonLogger.Msg("OnSceneWasLoaded: " + buildindex.ToString() + " | " + sceneName);
+            MelonLogger.Msg("OnSceneWasLoaded: " + buildindex.ToString() + " | " + sceneName);
         }
 
         public override void OnSceneWasInitialized(int buildindex, string sceneName) // Runs when a Scene has Initialized and is passed the Scene's Build Index and Name.
         {
-            //MelonLogger.Msg("OnSceneWasInitialized: " + buildindex.ToString() + " | " + sceneName);
+            MelonLogger.Msg("OnSceneWasInitialized: " + buildindex.ToString() + " | " + sceneName);
+
+            if (harmony != null && !harmonyPatched)
+            {
+                //foreach (MethodInfo mi in typeof(UnityEngine.Physics)
+                //    .GetMethods(BindingFlags.Public | BindingFlags.Static))
+                //{
+                //    MelonLogger.Msg($"Method: {mi.Name} ({string.Join(", ", mi.GetParameters().Select(p => p.ParameterType.Name))})");
+                //}
+
+                MelonLogger.Msg("[Mod] Patching with Harmony");
+                harmony.PatchAll();
+                harmonyPatched = true;
+            }
+
             try
             {
                 ObjectManager.OnSceneLoaded();
@@ -83,6 +104,9 @@ namespace Mod
 
         public override void OnGUI() // Can run multiple times per frame. Mostly used for Unity's IMGUI.
         {
+            if (isOnGUI) return;
+            isOnGUI = true;
+
             try
             {
                 Menu.OnGUI();
@@ -92,6 +116,8 @@ namespace Mod
             {
                 MelonLogger.Error(e.ToString());
             }
+
+            isOnGUI = false;
         }
 
         public override void OnApplicationQuit() // Runs when the Game is told to Close.
