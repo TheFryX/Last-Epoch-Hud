@@ -17,9 +17,33 @@ using System.Reflection;
 using AccessTools = HarmonyLib.AccessTools;
 //using static Il2Cpp.UIChat;
 using Il2CppTMPro;
+using Il2CppDMM;
 
 namespace Mod.Cheats.Patches
 {
+    public class MapIconPatch
+    {
+        private bool isInitialized = false;
+
+        public DMMapIcon? InitializeDMMapIcon(string name)
+        {
+            // todo: probably re-do this to just pass the found actor to avoid the string lookup?
+            // todo: how will we track when theyre dead to remove icon?
+            // i think corpses despawn so maybe okay to just leave it?
+            // otherwise can make an async task that does bg check for alive status
+            if (isInitialized) return null;
+            isInitialized = true;
+
+            GameObject npcObj = GameObject.Find(name);
+            if (npcObj != null)
+            {
+                return npcObj.AddComponent<DMMapIcon>();
+            }
+            else
+                return null;
+        }
+    }
+
     [HarmonyPatch]
     internal class HarmonyPatches
     {

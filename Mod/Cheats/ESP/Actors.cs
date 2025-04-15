@@ -1,4 +1,6 @@
 ﻿using Il2Cpp;
+using Il2CppDMM;
+using Mod.Cheats.Patches;
 using Mod.Game;
 using System;
 using System.Collections.Generic;
