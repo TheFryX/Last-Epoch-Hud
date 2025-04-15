@@ -11,7 +11,6 @@ namespace Mod.Game
     internal class ItemFiltering
     {
         // You have to manually call this method from a bug with Il2cppSystem.Nullable<T>1 in the generated code
-
         //[CallerCount(2)]
         //[CachedScanResults(RefRangeStart = 755433, RefRangeEnd = 755435, XrefRangeStart = 755420, XrefRangeEnd = 755433, MetadataInitTokenRva = 0, MetadataInitFlagRva = 0)]
         //public unsafe Rule.RuleOutcome Match(ItemDataUnpacked itemData, out Il2CppSystem.Nullable<int> color,

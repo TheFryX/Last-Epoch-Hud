@@ -16,7 +16,7 @@ namespace Mod
 
         public static Dictionary<string, bool> npcClassifications = new Dictionary<string, bool>
         {
-            { "Normal", true },
+            { "Normal", false },
             { "Magic", true },
             { "Rare", true },
             { "Boss", true }
@@ -24,9 +24,9 @@ namespace Mod
 
         public static Dictionary<string, bool> npcDrawings = new Dictionary<string, bool>
         {
-            { "Good", true },
+            { "Good", false },
             { "Evil", true },
-            { "Barrel", true },
+            { "Barrel", false },
             { "HostileNeutral", true },
             { "FriendlyNeutral", true },
             { "SummonedCorpse", true }
@@ -35,12 +35,12 @@ namespace Mod
         public static Dictionary<string, bool> itemDrawings = new Dictionary<string, bool>
         {
             { "Magic", true },
-            { "Common", true },
+            { "Common", false },
             { "Unique", true },
             { "Rare", true },
             { "Set", true },
             { "Exalted", true },
-            { "Gold Piles", true }
+            { "Gold Piles", false }
         };
 
         public static bool DrawGoldPiles()
