@@ -24,7 +24,7 @@ namespace Mod.Cheats.ESP
 
             foreach (var item in GroundItemVisuals.all._list)
             {
-                // Ensure the item is active in the scene
+                // Ensure the item is active in the scene  
                 if (item?.gameObject == null || !item.gameObject.activeInHierarchy) return;
 
                 var localPlayer = ObjectManager.GetLocalPlayer();
@@ -32,16 +32,13 @@ namespace Mod.Cheats.ESP
 
                 if (Vector3.Distance(localPlayer.transform.position, item.transform.position) > Settings.drawDistance) continue;
 
-                //item filtering stopped working as of at least 1.7.7, possibly much earlier
-                //disabling it for now
-                //Rule.RuleOutcome filter = ItemFiltering.Match(item.itemData, null, null);
+                Rule.RuleOutcome filter = ItemFiltering.Match(item.itemData, null, null, 0);
 
-
-                //if (Settings.useLootFilter && filter == Rule.RuleOutcome.HIDE) continue;
+                if (Settings.useLootFilter && filter == Rule.RuleOutcome.HIDE) continue;
 
                 var rarity = item.groundItemRarityVisuals?.name;
 
-                // Ensure rarity is not null before calling ShouldDrawItemRarity
+                // Ensure rarity is not null before calling ShouldDrawItemRarity  
                 if (rarity == null || !Settings.ShouldDrawItemRarity(rarity))
                 {
                     continue;
