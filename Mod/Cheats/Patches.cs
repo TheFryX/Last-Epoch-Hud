@@ -42,13 +42,23 @@ namespace Mod.Cheats.Patches
             else
                 return null;
         }
-        public static void InitializeDMMapIcon(GameObject actor, Sprite sprite)
+        public static void InitializeDMMapIcon(GameObject actor)
         {
-            if (actor.GetComponent<DMMapIcon>() == null)
+            if (actor.GetComponent<DMMapIconLabel>() == null)
             {
-                DMMapIcon mapIcon = actor.AddComponent<DMMapIcon>();
-                //mapIcon.SetSprite(sprite); // Assuming DMMapIcon has a method to set the sprite
-                mapIcon.img.sprite = sprite;
+                DMMapIconLabel mapIcon = actor.AddComponent<DMMapIconLabel>();
+
+                // Modify the RectTransform to adjust the size
+                RectTransform rt = mapIcon.GetComponent<RectTransform>();
+                if (rt != null)
+                {
+                    // Shrink the icon size to 20x20 pixels (or adjust as needed)
+                    rt.sizeDelta = new Vector2(20, 20);
+                }
+
+                mapIcon.text = "*";
+                // Change the color of the DMMapIcon (derived from Image)
+                mapIcon.color = Color.red;  // Change to any desired UnityEngine.Color
             }
         }
     }

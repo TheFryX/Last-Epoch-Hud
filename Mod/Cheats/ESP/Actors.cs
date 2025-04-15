@@ -72,12 +72,14 @@ namespace Mod.Cheats.ESP
                     ESP.AddLine(localPlayer.transform.position, actor.transform.position, color);
                     ESP.AddString(name + " (" + distance.ToString("F1") + ")", position, color);
 
-                    // Check if DMMapIcon component already exists
-                    if (actor.GetComponent<DMMapIcon>() == null)
-                    {
-                        // Initialize DMMapIcon component
-                        MapIconPatch.InitializeDMMapIcon(actor.gameObject, friendlyDotSprite);
-                    }
+                    // prototype that didnt quite work. will revisit later
+                    // Check and initialize DMMapIcon if it does not exist
+                    //DMMapIconLabel mapIcon = actor.GetComponent<DMMapIconLabel>();
+                    //if (mapIcon == null)
+                    //{
+                    //    MapIconPatch.InitializeDMMapIcon(actor.gameObject);
+                    //    mapIcon = actor.GetComponent<DMMapIconLabel>(); // retrieve the newly added component
+                    //}
                 }
             }
         }
