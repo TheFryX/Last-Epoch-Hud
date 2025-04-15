@@ -36,5 +36,9 @@ namespace Mod.Cheats.Patches
         // probably should patch out the crash reporter just incase
         // UnityEngine.CrashReportingModule->UnityEngine.CrashReportHandler->CrashReportHandler()
         // UnityEngine.CoreModule->UnityEngine->CrashReport()
+
+        // other possibly related hooks to patch out
+        // il2CppLE->il2Cpp->Il2CppLE.Services->ChatManager->_LogErrorAndSendTelemetryEvent_d__36
+        // il2CppLE->il2Cpp->Il2CppPlayFab->Il2CppPlayFab->PlayFabEventsAPI->WriteTelemetryEvents()
     }
 }
