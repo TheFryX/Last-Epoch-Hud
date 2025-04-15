@@ -83,5 +83,35 @@ namespace Mod.Cheats.Patches
         // other possibly related hooks to patch out
         // il2CppLE->il2Cpp->Il2CppLE.Services->ChatManager->_LogErrorAndSendTelemetryEvent_d__36
         // il2CppLE->il2Cpp->Il2CppPlayFab->Il2CppPlayFab->PlayFabEventsAPI->WriteTelemetryEvents()
+
+        [HarmonyPatch(typeof(DMMapIcon), "UpdateIcons")]
+        public class DMMapIconHooks
+        {
+            private static bool isFriendlyDotFound = false;
+            private static Image? friendlyDotImage = null;
+
+            public static Image? FriendlyDotImage => friendlyDotImage;
+
+            private static void Postfix(DMMapIcon __instance)
+            {
+                if (isFriendlyDotFound) return;
+
+                if (__instance != null)
+                {
+                    Image? imageComponent = __instance.GetComponent<Image>();
+                    if (imageComponent != null && __instance.name == "friendly-dot")
+                    {
+                        friendlyDotImage = imageComponent;
+                        isFriendlyDotFound = true;
+
+                        MelonLogger.Msg($"[Mod] Found 'friendly-dot' with Image component. Storing reference.");
+                    }
+                }
+                else
+                {
+                    MelonLogger.Msg("[Mod] DMMapIcon instance is null.");
+                }
+            }
+        }
     }
 }
