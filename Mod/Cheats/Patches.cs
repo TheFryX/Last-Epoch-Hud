@@ -42,6 +42,15 @@ namespace Mod.Cheats.Patches
             else
                 return null;
         }
+        public static void InitializeDMMapIcon(GameObject actor, Sprite sprite)
+        {
+            if (actor.GetComponent<DMMapIcon>() == null)
+            {
+                DMMapIcon mapIcon = actor.AddComponent<DMMapIcon>();
+                //mapIcon.SetSprite(sprite); // Assuming DMMapIcon has a method to set the sprite
+                mapIcon.img.sprite = sprite;
+            }
+        }
     }
 
     [HarmonyPatch]
