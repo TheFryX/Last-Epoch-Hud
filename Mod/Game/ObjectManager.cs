@@ -16,6 +16,10 @@ namespace Mod.Game
         public static void AttemptToFindPlayer()
         {
             localPlayer = GameObject.Find("MainPlayer(Clone)");
+            if (localPlayer == null)
+            {
+                localPlayer = GameObject.Find("Local Player(Clone)");
+            }
         }
 
         public static void OnSceneLoaded()

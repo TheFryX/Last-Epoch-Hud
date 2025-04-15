@@ -108,6 +108,10 @@ namespace Mod
             {
                 color = Color.red;
             }
+            else if (rarity.Contains("Legendary"))
+            {
+                color = new Color(1.0f, 0.5f, 0.0f);
+            }
             else if (rarity.Contains("Rare"))
             {
                 color = Color.yellow;

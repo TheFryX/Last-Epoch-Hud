@@ -37,6 +37,7 @@ namespace Mod
             { "Magic", true },
             { "Common", false },
             { "Unique", true },
+            { "Legendary", true },
             { "Rare", true },
             { "Set", true },
             { "Exalted", true },

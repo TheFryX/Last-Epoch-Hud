@@ -55,7 +55,8 @@ namespace Mod.Cheats.ESP
                 foreach (var actor in visual.visuals._list)
                 {
                     if (!actor.gameObject.activeInHierarchy) continue;
-                    if (actor.GetComponent<ActorDisplayInformation>() != null && !Settings.ShouldDrawNPCClassification(actor.GetComponent<ActorDisplayInformation>().actorClass)) continue;
+                    if (actor.GetComponent<ActorDisplayInformation>() != null && 
+                        !Settings.ShouldDrawNPCClassification(actor.GetComponent<ActorDisplayInformation>().actorClass)) continue;
 
                     float distance = Vector3.Distance(actor.transform.position, localPlayer.transform.position);
 
