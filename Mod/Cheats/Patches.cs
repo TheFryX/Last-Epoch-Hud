@@ -92,10 +92,10 @@ namespace Mod.Cheats.Patches
         public class DMMapIconHooks
         {
             //private static bool isFriendlyDotFound = false;
-            private static Image? friendlyDotImage = null;
+            //private static Image? friendlyDotImage = null;
             //private static Sprite? friendlyDotSprite = null;
 
-            public static Image? FriendlyDotImage => friendlyDotImage;
+            //public static Image? FriendlyDotImage => friendlyDotImage;
             //public static Sprite? FriendlyDotSprite => friendlyDotSprite;
 
             private static void Postfix(DMMapIcon __instance)
@@ -131,15 +131,15 @@ namespace Mod.Cheats.Patches
         [HarmonyPatch(typeof(DMMapWorldIcon), "SetIcon")]
         public class DMMapWorldIconHooks
         {
-            private static void Prefixfix(DMMapWorldIcon __instance)
-            {
-                if (__instance != null)
-                {
-                    //MelonLogger.Msg($"[Mod] DMMapIconManager Prefix instance: {__instance.name}");
-                    MelonLogger.Msg($"[Mod] DMMapWorldIcon Prefix currentIcon: {__instance.currentIcon}");
-                    MelonLogger.Msg($"[Mod] DMMapWorldIcon Prefix IconType: {__instance.icon}");
-                }
-            }
+            //private static void Prefix(DMMapWorldIcon __instance)
+            //{
+            //    if (__instance != null)
+            //    {
+            //        //MelonLogger.Msg($"[Mod] DMMapIconManager Prefix instance: {__instance.name}");
+            //        MelonLogger.Msg($"[Mod] DMMapWorldIcon Prefix currentIcon: {__instance.currentIcon}");
+            //        MelonLogger.Msg($"[Mod] DMMapWorldIcon Prefix IconType: {__instance.icon}");
+            //    }
+            //}
             private static void Postfix(DMMapWorldIcon __instance)
             {
                 if (__instance != null)
@@ -154,16 +154,16 @@ namespace Mod.Cheats.Patches
         [HarmonyPatch(typeof(DMMapIconManager), "Start")]
         public class DMMapIconManagerHooks
         {
-            private static void Prefixfix(DMMapIconManager __instance)
-            {
-                if (__instance != null)
-                {
-                    MelonLogger.Msg($"[Mod] DMMapIconManager Prefix instance: {__instance.name}");
+            //private static void Prefix(DMMapIconManager __instance)
+            //{
+            //    if (__instance != null)
+            //    {
+            //        MelonLogger.Msg($"[Mod] DMMapIconManager Prefix instance: {__instance.name}");
 
-                    //MelonLogger.Msg($"[Mod] DMMapIconManager Prefix currentIcon: {__instance.currentIcon}");
-                    //MelonLogger.Msg($"[Mod] DMMapIconManager Prefix IconType: {__instance.icon}");
-                }
-            }
+            //        //MelonLogger.Msg($"[Mod] DMMapIconManager Prefix currentIcon: {__instance.currentIcon}");
+            //        //MelonLogger.Msg($"[Mod] DMMapIconManager Prefix IconType: {__instance.icon}");
+            //    }
+            //}
             private static void Postfix(DMMapIconManager __instance)
             {
                 if (__instance != null)
@@ -175,29 +175,57 @@ namespace Mod.Cheats.Patches
                 }
             }
         }
-        [HarmonyPatch(typeof(BaseDMMapIcon), "initialise")]
-        public class BaseDMMapIconHooks
+
+        //[HarmonyPatch(typeof(BaseDMMapIcon), "initialise")]
+        //public class BaseDMMapIconInitHooks
+        //{
+        //    private static void Prefix(BaseDMMapIcon __instance)
+        //    {
+        //        if (__instance != null)
+        //        {
+        //            MelonLogger.Msg($"[Mod] BaseDMMapIcon.initialise Prefix instance: {__instance.name}");
+
+        //            //MelonLogger.Msg($"[Mod] DMMapIconManager Prefix currentIcon: {__instance.currentIcon}");
+        //            //MelonLogger.Msg($"[Mod] DMMapIconManager Prefix IconType: {__instance.icon}");
+        //        }
+        //    }
+        //    private static void Postfix(BaseDMMapIcon __instance)
+        //    {
+        //        if (__instance != null)
+        //        {
+        //            MelonLogger.Msg($"[Mod] BaseDMMapIcon.initialise Postfix instance: {__instance.name}");
+
+        //            //MelonLogger.Msg($"[Mod] DMMapWorldIcon Postfix currentIcon: {__instance.currentIcon}");
+        //            //MelonLogger.Msg($"[Mod] DMMapWorldIcon Postfix IconType: {__instance.icon}");
+        //        }
+        //    }
+        //}
+
+        [HarmonyPatch(typeof(BaseDMMapIcon), nameof(BaseDMMapIcon.initialise))]
+        [HarmonyPostfix]
+        private static void initialisePostfix(BaseDMMapIcon __instance)
         {
-            private static void Prefix(BaseDMMapIcon __instance)
-            {
-                if (__instance != null)
-                {
-                    MelonLogger.Msg($"[Mod] BaseDMMapIcon Prefix instance: {__instance.name}");
+            if (__instance == null) return;
 
-                    //MelonLogger.Msg($"[Mod] DMMapIconManager Prefix currentIcon: {__instance.currentIcon}");
-                    //MelonLogger.Msg($"[Mod] DMMapIconManager Prefix IconType: {__instance.icon}");
-                }
-            }
-            private static void Postfix(BaseDMMapIcon __instance, ref bool __result)
-            {
-                if (__instance != null)
-                {
-                    MelonLogger.Msg($"[Mod] BaseDMMapIcon Postfix instance: {__instance.name} result: {__result}");
+            MelonLogger.Msg($"BaseDMMapIcon.initialise: {__instance.name}");
+        }
 
-                    //MelonLogger.Msg($"[Mod] DMMapWorldIcon Postfix currentIcon: {__instance.currentIcon}");
-                    //MelonLogger.Msg($"[Mod] DMMapWorldIcon Postfix IconType: {__instance.icon}");
-                }
-            }
+        [HarmonyPatch(typeof(BaseDMMapIcon), nameof(BaseDMMapIcon.UpdateIconSprite))]
+        [HarmonyPostfix]
+        private static void UpdateIconSpritePostfix(BaseDMMapIcon __instance)
+        {
+            if (__instance == null) return;
+
+            MelonLogger.Msg($"BaseDMMapIcon.UpdateIconSprite: {__instance.name}");
+        }
+
+        [HarmonyPatch(typeof(BaseDMMapIcon), nameof(BaseDMMapIcon.UpdateIcons))]
+        [HarmonyPostfix]
+        private static void UpdateIconsPostfix(BaseDMMapIcon __instance)
+        {
+            if (__instance == null) return;
+
+            MelonLogger.Msg($"BaseDMMapIcon.UpdateIcons: {__instance.name}");
         }
     }
 }
