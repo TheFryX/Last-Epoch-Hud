@@ -74,11 +74,11 @@ namespace Mod.Cheats.ESP
 
                     // prototype that didnt quite work. will revisit later
                     // Check and initialize DMMapIcon if it does not exist
-                    //DMMapIconLabel mapIcon = actor.GetComponent<DMMapIconLabel>();
+                    //DMMapWorldIcon mapIcon = actor.GetComponent<DMMapWorldIcon>();
                     //if (mapIcon == null)
                     //{
                     //    MapIconPatch.InitializeDMMapIcon(actor.gameObject);
-                    //    mapIcon = actor.GetComponent<DMMapIconLabel>(); // retrieve the newly added component
+                    //    //mapIcon = actor.GetComponent<DMMapWorldIcon>(); // retrieve the newly added component
                     //}
                 }
             }

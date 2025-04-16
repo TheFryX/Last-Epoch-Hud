@@ -44,9 +44,11 @@ namespace Mod.Cheats.Patches
         }
         public static void InitializeDMMapIcon(GameObject actor)
         {
-            if (actor.GetComponent<DMMapIconLabel>() == null)
+            if (actor.GetComponent<DMMapWorldIcon>() == null)
             {
-                DMMapIconLabel mapIcon = actor.AddComponent<DMMapIconLabel>();
+                DMMapWorldIcon mapIcon = actor.AddComponent<DMMapWorldIcon>();
+
+                mapIcon.icon = DMMapWorldIcon.iconType.arenaIcon;
 
                 // Modify the RectTransform to adjust the size
                 RectTransform rt = mapIcon.GetComponent<RectTransform>();
@@ -56,9 +58,11 @@ namespace Mod.Cheats.Patches
                     rt.sizeDelta = new Vector2(20, 20);
                 }
 
-                mapIcon.text = "*";
+                //mapIcon.img = HarmonyPatches.DMMapIconHooks.FriendlyDotImage;
+
+                //mapIcon.text = "*";
                 // Change the color of the DMMapIcon (derived from Image)
-                mapIcon.color = Color.red;  // Change to any desired UnityEngine.Color
+                //mapIcon.img.color = Color.red;  // Change to any desired UnityEngine.Color
             }
         }
     }
@@ -87,29 +91,63 @@ namespace Mod.Cheats.Patches
         [HarmonyPatch(typeof(DMMapIcon), "UpdateIcons")]
         public class DMMapIconHooks
         {
-            private static bool isFriendlyDotFound = false;
+            //private static bool isFriendlyDotFound = false;
             private static Image? friendlyDotImage = null;
+            //private static Sprite? friendlyDotSprite = null;
 
             public static Image? FriendlyDotImage => friendlyDotImage;
+            //public static Sprite? FriendlyDotSprite => friendlyDotSprite;
 
             private static void Postfix(DMMapIcon __instance)
             {
-                if (isFriendlyDotFound) return;
+                //if (isFriendlyDotFound) return;
 
                 if (__instance != null)
                 {
-                    Image? imageComponent = __instance.GetComponent<Image>();
-                    if (imageComponent != null && __instance.name == "friendly-dot")
-                    {
-                        friendlyDotImage = imageComponent;
-                        isFriendlyDotFound = true;
+                    //MelonLogger.Msg($"[Mod] DMMapIcon instance: {__instance.name}");
+                    //GameObject? gObject = __instance.gameObject;
+                    //Image? imageComponent = gObject.GetComponent<Image>();
+                    //Sprite? spriteComponent = gObject.GetComponent<Sprite>();
+                    //if (spriteComponent == null && imageComponent != null)
+                    //{
+                    //    MelonLogger.Msg("[Mod] DMMapIcon sprite is null. Trying to find in children.");
+                    //    spriteComponent = imageComponent.GetComponent<Sprite>();
+                    //}
+                    //if (imageComponent != null && spriteComponent != null && spriteComponent.name == "friendly-dot")
+                    //{
+                    //    friendlyDotImage = imageComponent;
+                    //    friendlyDotSprite = spriteComponent;
+                    //    isFriendlyDotFound = true;
 
-                        MelonLogger.Msg($"[Mod] Found 'friendly-dot' with Image component. Storing reference.");
-                    }
+                    //    MelonLogger.Msg($"[Mod] Found 'friendly-dot' with Image component. Storing reference.");
+                    //}
                 }
                 else
                 {
                     MelonLogger.Msg("[Mod] DMMapIcon instance is null.");
+                }
+            }
+        }
+        [HarmonyPatch(typeof(DMMapWorldIcon), "SetIcon")]
+        public class DMMapWorldIconHooks
+        {
+            private static void Prefixfix(DMMapWorldIcon __instance)
+            {
+                if (__instance != null)
+                {
+                    //MelonLogger.Msg($"[Mod] DMMapIconManager Prefix instance: {__instance.name}");
+                    MelonLogger.Msg($"[Mod] DMMapWorldIcon Prefix currentIcon: {__instance.currentIcon}");
+                    MelonLogger.Msg($"[Mod] DMMapWorldIcon Prefix IconType: {__instance.icon}");
+                }
+            }
+            private static void Postfix(DMMapWorldIcon __instance)
+            {
+                if (__instance != null)
+                {
+                    //MelonLogger.Msg($"[Mod] DMMapIconManager Postfix instance: {__instance.name}");
+
+                    MelonLogger.Msg($"[Mod] DMMapWorldIcon Postfix currentIcon: {__instance.currentIcon}");
+                    MelonLogger.Msg($"[Mod] DMMapWorldIcon Postfix IconType: {__instance.icon}");
                 }
             }
         }
