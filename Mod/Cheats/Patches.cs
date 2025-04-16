@@ -21,7 +21,7 @@ using Il2CppDMM;
 
 namespace Mod.Cheats.Patches
 {
-    public class MapIconPatch
+    public class MapIconPatch : MonoBehaviour
     {
         private bool isInitialized = false;
 
@@ -44,19 +44,33 @@ namespace Mod.Cheats.Patches
         }
         public static void InitializeDMMapIcon(GameObject actor)
         {
-            if (actor.GetComponent<DMMapWorldIcon>() == null)
+            actor.AddComponent<MapIconPatch>();
+            if (actor.GetComponent<DMMapIconManager>() == null)
             {
-                DMMapWorldIcon mapIcon = actor.AddComponent<DMMapWorldIcon>();
+                DMMapIconManager? mapIcon = actor.AddComponent<DMMapIconManager>();
+                BaseDMMapIcon? baseMapIcon = null;
 
-                mapIcon.icon = DMMapWorldIcon.iconType.arenaIcon;
+                if (mapIcon == null)
+                {
+                    MelonLogger.Msg($"[Mod] Failed to add DMMapIconManager to {actor.name}");
+                    return;
+                }
+                else
+                {
+                    mapIcon.Start();
+                    baseMapIcon = mapIcon.GetComponent<BaseDMMapIcon>();
+                }
+
+
+                //mapIcon.icon = DMMapWorldIcon.iconType.arenaIcon;
 
                 // Modify the RectTransform to adjust the size
-                RectTransform rt = mapIcon.GetComponent<RectTransform>();
-                if (rt != null)
-                {
-                    // Shrink the icon size to 20x20 pixels (or adjust as needed)
-                    rt.sizeDelta = new Vector2(20, 20);
-                }
+                //RectTransform rt = mapIcon.GetComponent<RectTransform>();
+                //if (rt != null)
+                //{
+                //    // Shrink the icon size to 20x20 pixels (or adjust as needed)
+                //    rt.sizeDelta = new Vector2(20, 20);
+                //}
 
                 //mapIcon.img = HarmonyPatches.DMMapIconHooks.FriendlyDotImage;
 
