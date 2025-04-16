@@ -151,5 +151,53 @@ namespace Mod.Cheats.Patches
                 }
             }
         }
+        [HarmonyPatch(typeof(DMMapIconManager), "Start")]
+        public class DMMapIconManagerHooks
+        {
+            private static void Prefixfix(DMMapIconManager __instance)
+            {
+                if (__instance != null)
+                {
+                    MelonLogger.Msg($"[Mod] DMMapIconManager Prefix instance: {__instance.name}");
+
+                    //MelonLogger.Msg($"[Mod] DMMapIconManager Prefix currentIcon: {__instance.currentIcon}");
+                    //MelonLogger.Msg($"[Mod] DMMapIconManager Prefix IconType: {__instance.icon}");
+                }
+            }
+            private static void Postfix(DMMapIconManager __instance)
+            {
+                if (__instance != null)
+                {
+                    MelonLogger.Msg($"[Mod] DMMapIconManager Postfix instance: {__instance.name}");
+
+                    //MelonLogger.Msg($"[Mod] DMMapWorldIcon Postfix currentIcon: {__instance.currentIcon}");
+                    //MelonLogger.Msg($"[Mod] DMMapWorldIcon Postfix IconType: {__instance.icon}");
+                }
+            }
+        }
+        [HarmonyPatch(typeof(BaseDMMapIcon), "initialise")]
+        public class BaseDMMapIconHooks
+        {
+            private static void Prefix(BaseDMMapIcon __instance)
+            {
+                if (__instance != null)
+                {
+                    MelonLogger.Msg($"[Mod] BaseDMMapIcon Prefix instance: {__instance.name}");
+
+                    //MelonLogger.Msg($"[Mod] DMMapIconManager Prefix currentIcon: {__instance.currentIcon}");
+                    //MelonLogger.Msg($"[Mod] DMMapIconManager Prefix IconType: {__instance.icon}");
+                }
+            }
+            private static void Postfix(BaseDMMapIcon __instance, ref bool __result)
+            {
+                if (__instance != null)
+                {
+                    MelonLogger.Msg($"[Mod] BaseDMMapIcon Postfix instance: {__instance.name} result: {__result}");
+
+                    //MelonLogger.Msg($"[Mod] DMMapWorldIcon Postfix currentIcon: {__instance.currentIcon}");
+                    //MelonLogger.Msg($"[Mod] DMMapWorldIcon Postfix IconType: {__instance.icon}");
+                }
+            }
+        }
     }
 }
