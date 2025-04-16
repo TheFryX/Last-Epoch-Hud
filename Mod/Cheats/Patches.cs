@@ -143,10 +143,10 @@ namespace Mod.Cheats.Patches
             {
                 if (__instance != null)
                 {
-                    //MelonLogger.Msg($"[Mod] DMMapIconManager Postfix instance: {__instance.name}");
+                    MelonLogger.Msg($"[Mod] DMMapIconManager Postfix instance: {__instance.name}");
 
-                    MelonLogger.Msg($"[Mod] DMMapWorldIcon.SetIcon Postfix currentIcon: {__instance.currentIcon}");
-                    MelonLogger.Msg($"[Mod] DMMapWorldIcon.SetIcon Postfix IconType: {__instance.icon}");
+                    //MelonLogger.Msg($"[Mod] DMMapWorldIcon.SetIcon Postfix currentIcon: {__instance.currentIcon}");
+                    //MelonLogger.Msg($"[Mod] DMMapWorldIcon.SetIcon Postfix IconType: {__instance.icon}");
                 }
             }
         }
@@ -154,16 +154,17 @@ namespace Mod.Cheats.Patches
         [HarmonyPatch(typeof(DMMapIconManager), "Start")]
         public class DMMapIconManagerHooks
         {
-            //private static void Prefix(DMMapIconManager __instance)
-            //{
-            //    if (__instance != null)
-            //    {
-            //        MelonLogger.Msg($"[Mod] DMMapIconManager Prefix instance: {__instance.name}");
+            // the flow seems to be start from DMMapIconManager.Start -> BaseDMMapIcon.initialise to create minion icons on map
+            private static void Prefix(DMMapIconManager __instance)
+            {
+                if (__instance != null)
+                {
+                    MelonLogger.Msg($"[Mod] DMMapIconManager.Start Prefix instance: {__instance.name}");
 
-            //        //MelonLogger.Msg($"[Mod] DMMapIconManager.Start Prefix currentIcon: {__instance.currentIcon}");
-            //        //MelonLogger.Msg($"[Mod] DMMapIconManager.Start Prefix IconType: {__instance.icon}");
-            //    }
-            //}
+                    //MelonLogger.Msg($"[Mod] DMMapIconManager.Start Prefix currentIcon: {__instance.currentIcon}");
+                    //MelonLogger.Msg($"[Mod] DMMapIconManager.Start Prefix IconType: {__instance.icon}");
+                }
+            }
             private static void Postfix(DMMapIconManager __instance)
             {
                 if (__instance != null)
@@ -207,23 +208,7 @@ namespace Mod.Cheats.Patches
         {
             if (__instance == null) return;
 
-            // Log the current instance name
-            MelonLogger.Msg($"[Mod] BaseDMMapIcon.initialise: {__instance.name}");
-
-            // Retrieve the call stack
-            var stackTrace = new System.Diagnostics.StackTrace();
-
-            // Get the calling method (the method that called BaseDMMapIcon.initialise)
-            var callingMethod = stackTrace.GetFrame(2)?.GetMethod(); // Frame 2 is typically the caller of the patched method
-
-            if (callingMethod != null)
-            {
-                MelonLogger.Msg($"[Mod] Called by: {callingMethod.DeclaringType?.FullName}.{callingMethod.Name}");
-            }
-            else
-            {
-                MelonLogger.Msg("[Mod] Unable to determine the calling method.");
-            }
+            MelonLogger.Msg($"[Mod] BaseDMMapIcon.initialise Postfix: {__instance.name}");
         }
 
         // this one fires every frame, we should avoid hooking into it unless necessary
