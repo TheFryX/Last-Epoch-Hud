@@ -25,41 +25,27 @@ namespace Mod.Cheats.Patches
     {
         private bool isInitialized = false;
 
-        public DMMapIcon? InitializeDMMapIcon(string name)
+        public void InitializeDMMapIcon(GameObject actor)
         {
-            // todo: probably re-do this to just pass the found actor to avoid the string lookup?
-            // todo: how will we track when theyre dead to remove icon?
-            // i think corpses despawn so maybe okay to just leave it?
-            // otherwise can make an async task that does bg check for alive status
-            if (isInitialized) return null;
-            isInitialized = true;
+            if (isInitialized) return;
 
-            GameObject npcObj = GameObject.Find(name);
-            if (npcObj != null)
-            {
-                return npcObj.AddComponent<DMMapIcon>();
-            }
-            else
-                return null;
-        }
-        public static void InitializeDMMapIcon(GameObject actor)
-        {
-            actor.AddComponent<MapIconPatch>();
+            //var ourCont = actor.AddComponent<MinimapIconManager>();
+
             if (actor.GetComponent<DMMapIconManager>() == null)
             {
-                DMMapIconManager? mapIcon = actor.AddComponent<DMMapIconManager>();
-                BaseDMMapIcon? baseMapIcon = null;
+                //DMMapIconManager? mapIcon = actor.AddComponent<DMMapIconManager>();
+                //BaseDMMapIcon? baseMapIcon = null;
 
-                if (mapIcon == null)
-                {
-                    MelonLogger.Msg($"[Mod] Failed to add DMMapIconManager to {actor.name}");
-                    return;
-                }
-                else
-                {
-                    mapIcon.Start();
-                    baseMapIcon = mapIcon.GetComponent<BaseDMMapIcon>();
-                }
+                //if (mapIcon == null)
+                //{
+                //    MelonLogger.Msg($"[Mod] Failed to add DMMapIconManager to {actor.name}");
+                //    return;
+                //}
+                //else
+                //{
+                //    mapIcon.Start();
+                //    baseMapIcon = mapIcon.GetComponent<BaseDMMapIcon>();
+                //}
 
 
                 //mapIcon.icon = DMMapWorldIcon.iconType.arenaIcon;
@@ -78,6 +64,7 @@ namespace Mod.Cheats.Patches
                 // Change the color of the DMMapIcon (derived from Image)
                 //mapIcon.img.color = Color.red;  // Change to any desired UnityEngine.Color
             }
+            isInitialized = true;
         }
     }
 
@@ -157,7 +144,7 @@ namespace Mod.Cheats.Patches
             {
                 if (__instance != null)
                 {
-                    MelonLogger.Msg($"[Mod] DMMapIconManager Postfix instance: {__instance.name}");
+                    MelonLogger.Msg($"[Mod] DMMapIconManager.SetIcon Postfix instance: {__instance.name}");
 
                     //MelonLogger.Msg($"[Mod] DMMapWorldIcon.SetIcon Postfix currentIcon: {__instance.currentIcon}");
                     //MelonLogger.Msg($"[Mod] DMMapWorldIcon.SetIcon Postfix IconType: {__instance.icon}");

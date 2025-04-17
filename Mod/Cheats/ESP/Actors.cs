@@ -77,7 +77,7 @@ namespace Mod.Cheats.ESP
                     DMMapWorldIcon mapIcon = actor.GetComponent<DMMapWorldIcon>();
                     if (mapIcon == null)
                     {
-                        MapIconPatch.InitializeDMMapIcon(actor.gameObject);
+                        //MapIconPatch.InitializeDMMapIcon(actor.gameObject);
 
                         //var actorGO = actor.gameObject;
                         //actorGO.AddComponent<MapIconPatch>();
