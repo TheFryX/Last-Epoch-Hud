@@ -54,9 +54,9 @@ namespace Mod
                 //    MelonLogger.Msg($"Method: {mi.Name} ({string.Join(", ", mi.GetParameters().Select(p => p.ParameterType.Name))})");
                 //}
 
-                MelonLogger.Msg("[Mod] Patching with Harmony");
-                harmony.PatchAll();
-                harmonyPatched = true;
+                //MelonLogger.Msg("[Mod] Patching with Harmony");
+                //harmony.PatchAll();
+                //harmonyPatched = true;
             }
 
             try
