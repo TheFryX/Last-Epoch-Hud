@@ -3,7 +3,7 @@ using Mod.Cheats;
 using Mod.Cheats.ESP;
 using Mod.Game;
 
-[assembly: MelonInfo(typeof(Mod.Mod), "Mod", "0.1.1", "Daxx")]
+[assembly: MelonInfo(typeof(Mod.Mod), "Mod", "0.2.0", "Daxx")]
 [assembly: MelonGame("Eleventh Hour Games", "Last Epoch")]
 
 namespace Mod
