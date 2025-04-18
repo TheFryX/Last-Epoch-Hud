@@ -24,13 +24,18 @@ namespace Mod.Cheats
             lastUse = DateTime.Now;
 
             var localPlayer = ObjectManager.GetLocalPlayer();
-
             if (localPlayer == null) return;
 
-            var healthPotion = localPlayer.GetComponent<HealthPotion>();
+            var healthPotion = localPlayer.GetComponent<LocalPlayer>();
             if (healthPotion != null)
             {
-                healthPotion.UsePotion();
+                var reapercheck = localPlayer.GetComponentInChildren<ChangeHealthMaterialDuringLifetime>();
+                if (reapercheck != null && reapercheck.materialToChangeTo == UIGlobeHealth.AlternateMaterial.ReaperForm)
+                {
+                    MelonLogger.Msg("Reaper is active, not using health potion.");
+                    return;
+                }
+                healthPotion.PotionKeyPressed();
             }
         }
 

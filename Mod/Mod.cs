@@ -14,7 +14,7 @@ namespace Mod
         public const string Description = "Mod for Testing"; // Description for the Mod.  (Set as null if none)
         public const string Author = "Daxx"; // Author of the Mod.  (MUST BE SET)
         public const string Company = null; // Company that made the Mod.  (Set as null if none)
-        public const string Version = "0.1.1"; // Version of the Mod.  (MUST BE SET)
+        public const string Version = "0.2.0"; // Version of the Mod.  (MUST BE SET)
         public const string DownloadLink = null; // Download Link for the Mod.  (Set as null if none)
     }
 
@@ -22,7 +22,7 @@ namespace Mod
     {
         private static bool isOnGUI = false;
         private HarmonyLib.Harmony? harmony;
-        private bool harmonyPatched = false;
+        //private bool harmonyPatched = false;
 
         public override void OnInitializeMelon()
         {
@@ -46,8 +46,8 @@ namespace Mod
         {
             //MelonLogger.Msg("OnSceneWasInitialized: " + buildindex.ToString() + " | " + sceneName);
 
-            if (harmony != null && !harmonyPatched)
-            {
+            //if (harmony != null && !harmonyPatched)
+            //{
                 //foreach (MethodInfo mi in typeof(UnityEngine.Physics)
                 //    .GetMethods(BindingFlags.Public | BindingFlags.Static))
                 //{
@@ -57,7 +57,7 @@ namespace Mod
                 //MelonLogger.Msg("[Mod] Patching with Harmony");
                 //harmony.PatchAll();
                 //harmonyPatched = true;
-            }
+            //}
 
             try
             {
