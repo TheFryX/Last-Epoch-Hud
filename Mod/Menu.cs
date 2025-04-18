@@ -62,7 +62,26 @@ namespace Mod
                 }
             }
 
-            //Settings.useLootFilter = GUILayout.Toggle(Settings.useLootFilter, "Use Loot Filter");
+            Settings.useLootFilter = GUILayout.Toggle(Settings.useLootFilter, "Use Loot Filter");
+
+            if (Settings.useLootFilter)
+            {
+                GUI.enabled = false;
+            }
+
+            foreach (KeyValuePair<string, bool> entry in Settings.itemDrawings)
+            {
+                if (entry.Key != "Gold Piles")
+                {
+                    bool result = GUILayout.Toggle(entry.Value, entry.Key);
+                    if (result != entry.Value)
+                    {
+                        Settings.itemDrawings[entry.Key] = result;
+                    }
+                }
+            }
+
+            GUI.enabled = true;
             Settings.mapHack = GUILayout.Toggle(Settings.mapHack, "Map Hack");
 
             GUILayout.BeginHorizontal();
