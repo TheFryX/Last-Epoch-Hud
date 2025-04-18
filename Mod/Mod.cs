@@ -28,7 +28,7 @@ namespace Mod
         {
             //MelonLogger.Msg("OnApplicationStart");
 
-            harmony = new HarmonyLib.Harmony("com.daxx.lastepoch.mod");
+            //harmony = new HarmonyLib.Harmony("com.daxx.lastepoch.mod");
             //--melonloader.debug startup cmd to enable harmony debugmode
         }
 
