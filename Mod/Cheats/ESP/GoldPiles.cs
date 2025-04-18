@@ -15,12 +15,13 @@ namespace Mod.Cheats.ESP
     {
         public static void GatherGoldPiles()
         {
-            if (!Settings.DrawGoldPiles()) return;
+            if (!Settings.DrawGoldPiles() || Settings.useLootFilter) return;
             if (GroundGoldVisuals.all == null) return;
 
             foreach (var item in GroundGoldVisuals.all._list)
             {
                 if (item?.gameObject == null || !item.gameObject.activeInHierarchy) continue;
+                //if (item.goldValue < 50) continue;
 
                 var localPlayer = ObjectManager.GetLocalPlayer();
                 if (localPlayer?.transform == null) continue;
