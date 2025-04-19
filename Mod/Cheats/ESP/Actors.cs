@@ -1,12 +1,5 @@
 ﻿using Il2Cpp;
-using Il2CppDMM;
-using Mod.Cheats.Patches;
 using Mod.Game;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Mod.Cheats.ESP

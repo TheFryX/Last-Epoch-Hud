@@ -1,14 +1,5 @@
 ﻿using Il2Cpp;
-using Il2CppLE.Networking;
-using Il2CppLE.Services.Models;
-using MelonLoader;
 using Mod.Game;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static Il2CppRewired.Demos.GamepadTemplateUI.GamepadTemplateUI;
 
 namespace Mod.Cheats
 {

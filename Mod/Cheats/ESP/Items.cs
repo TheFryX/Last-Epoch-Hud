@@ -1,17 +1,6 @@
 ﻿using Il2Cpp;
-using Il2CppInterop.Common.Attributes;
-using Il2CppInterop.Runtime;
 using Il2CppItemFiltering;
-using Il2CppSystem.Reflection;
-using MelonLoader;
 using Mod.Game;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Mod.Cheats.ESP

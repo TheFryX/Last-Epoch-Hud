@@ -1,22 +1,8 @@
-﻿using Il2CppInterop.Runtime;
-using System.Runtime.Serialization;
-using UnityEngine;
-using Mod.Game;
-//using static UnityEngine.Physics;
-using UnityEngine.UI;
-using Harmony;
-using HarmonyLib;
+﻿using UnityEngine;
 using Il2Cpp;
-using UnityEngine.Playables;
-using ObjectManager = Mod.Game.ObjectManager;
 using HarmonyPatch = HarmonyLib.HarmonyPatch;
 using MelonLoader;
 using HarmonyPostfix = HarmonyLib.HarmonyPostfix;
-using HarmonyPrefix = HarmonyLib.HarmonyPrefix;
-using System.Reflection;
-using AccessTools = HarmonyLib.AccessTools;
-//using static Il2Cpp.UIChat;
-using Il2CppTMPro;
 using Il2CppDMM;
 using static MelonLoader.LoaderConfig;
 
