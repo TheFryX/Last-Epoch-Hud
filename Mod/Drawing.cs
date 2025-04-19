@@ -34,12 +34,37 @@ namespace Mod
             GUI.Label(new Rect(upperLeft, size), content);
         }
 
+        //public static void DrawString(Vector3 worldPosition, string label, Color color, bool centered = true)
+        //{
+        //    var backup = StringStyle.normal.textColor;
+        //    StringStyle.normal.textColor = color;
+        //    DrawString(worldPosition, label, centered);
+        //    StringStyle.normal.textColor = backup;
+        //}
+
         public static void DrawString(Vector3 worldPosition, string label, Color color, bool centered = true)
         {
-            var backup = StringStyle.normal.textColor;
-            StringStyle.normal.textColor = color;
-            DrawString(worldPosition, label, centered);
-            StringStyle.normal.textColor = backup;
+            Vector3 screen = Camera.main.WorldToScreenPoint(worldPosition);
+            screen.y = Screen.height - screen.y;
+
+            // Clamp the label to the screen
+            Vector2 position = ClampToScreen(screen, new Vector2(25, 25));
+
+            var content = new GUIContent(label);
+            var size = StringStyle.CalcSize(content);
+            var upperLeft = centered ? position - size / 2f : position;
+
+            // Backup the current GUI color
+            Color prevColor = GUI.color;
+
+            // Set the desired color
+            GUI.color = color;
+
+            // Draw the label
+            GUI.Label(new Rect(upperLeft, size), content);
+
+            // Restore the previous GUI color
+            GUI.color = prevColor;
         }
 
         public static void DrawLine(Vector3 worldA, Vector3 worldB, Color color, float width)
