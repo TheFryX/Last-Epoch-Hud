@@ -91,17 +91,24 @@ namespace Mod.Cheats.Patches
         // il2CppLE->il2Cpp->Il2CppPlayFab->Il2CppPlayFab->PlayFabEventsAPI->WriteTelemetryEvents()
 
         [HarmonyPatch]
-        [HarmonyPatch(typeof(CameraManager), "OnEnable")]
+        [HarmonyPatch(typeof(CameraManager), "ApplyZoom")]
         public class Camera_ : MelonMod
         {
+            private static bool isPatched = false;
             public static void Postfix(CameraManager __instance)
             {
-                MelonLogger.Msg("CameraManager");
-                MelonLogger.Msg("zoomDefault: " + __instance.zoomDefault.ToString());
-                MelonLogger.Msg("zoomMin: " + __instance.zoomMin.ToString());
-                MelonLogger.Msg("reverseZoomDirection: " + __instance.reverseZoomDirection.ToString());
-                // zoomDefault: -17.5
-                // zoomMin: -7
+                if (!isPatched)
+                {
+                    MelonLogger.Msg("[Mod] CameraManager hooked");
+                    //MelonLogger.Msg("zoomDefault: " + __instance.zoomDefault.ToString());
+                    //MelonLogger.Msg("zoomMin: " + __instance.zoomMin.ToString());
+                    //MelonLogger.Msg("reverseZoomDirection: " + __instance.reverseZoomDirection.ToString());
+                    __instance.zoomDefault = -52.5f;
+                    isPatched = true;
+                    MelonLogger.Msg("[Mod] Camera max zoom patched (3x)");
+                    // zoomDefault: -17.5
+                    // zoomMin: -7
+                }
             }
         }
 
@@ -114,10 +121,11 @@ namespace Mod.Cheats.Patches
             {
                 if (!isPatched)
                 {
-                    //MelonLogger.Msg("DMMapZoom");
-                    MelonLogger.Msg("minimap zoomDefault: " + __instance.maxMinimapZoom.ToString());
+                    //MelonLogger.Msg("DMMapZoom hooked");
+                    //MelonLogger.Msg("minimap zoomDefault: " + __instance.maxMinimapZoom.ToString());
                     __instance.maxMinimapZoom = float.MaxValue;
-                    MelonLogger.Msg("minimap Zoom patched");
+                    isPatched = true;
+                    MelonLogger.Msg("[Mod] minimap max zoom patched ()");
                     // zoomdefault: 37.5
                 }
             }
