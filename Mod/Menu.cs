@@ -78,10 +78,10 @@ namespace Mod
             GUI.enabled = true;
 
             #region spacing
-            //GUILayout.Space(20); // something wrong with our melon trampoline, dont use space() for now
-            GUILayout.BeginHorizontal();
-            GUILayout.Label("", GUILayout.Width(20));
-            GUILayout.EndHorizontal();
+            GUILayout.Space(10); // something wrong with our melon trampoline, dont use space() for now
+            //GUILayout.BeginHorizontal();
+            //GUILayout.Label("", GUILayout.Width(20));
+            //GUILayout.EndHorizontal();
             #endregion
 
             Settings.mapHack = GUILayout.Toggle(Settings.mapHack, "Map Hack");
