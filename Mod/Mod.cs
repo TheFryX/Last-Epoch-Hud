@@ -63,8 +63,12 @@ namespace Mod
             {
                 ObjectManager.OnSceneLoaded();
                 MapHack.OnSceneWasLoaded();
+
                 GameMods.someCondition = true;
                 GameMods.FogRemover(true);
+
+                GameMods.someCondition2 = true;
+                GameMods.playerLantern(true);
             }
             catch (System.Exception e)
             {
