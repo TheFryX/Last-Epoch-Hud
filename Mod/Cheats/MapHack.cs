@@ -25,7 +25,7 @@ namespace Mod.Cheats
                     minimapFogOfWar.discoveryDistance = 5000.0f;
                 }
             }
-            else
+            else if (!Settings.mapHack)
             {
                 minimapFogOfWar.discoveryDistance = 20.0f;
             }

@@ -72,10 +72,6 @@ namespace Mod
 
             GUI.enabled = true;
 
-            #region spacing
-            GUILayout.Space(10); // something wrong with our melon trampoline, dont use space() for now
-            #endregion
-
             gamePatchesDropdown = GUILayout.Toggle(gamePatchesDropdown, "Game Patches:", "button");
             if (gamePatchesDropdown)
             {
@@ -92,12 +88,13 @@ namespace Mod
             GUILayout.Label("Draw Distance: " + Settings.drawDistance.ToString("F1"));
             Settings.drawDistance = GUILayout.HorizontalSlider(Settings.drawDistance, 0.0f, 300.0f);
 
-            GUILayout.Label("Auto Health Potion HP Threshold: " + Settings.autoHealthPotion.ToString("F1"));
+            GUILayout.Label("Auto HP Pot Threshold %: " + Settings.autoHealthPotion.ToString("F1"));
             Settings.autoHealthPotion = GUILayout.HorizontalSlider(Settings.autoHealthPotion, 0.0f, 100.0f);
 
             GUILayout.EndVertical();
 
-            Rect resizeGripRect = new Rect(windowRect.width - resizeGripSize, windowRect.height - resizeGripSize, resizeGripSize, resizeGripSize);
+            Rect resizeGripRect = new Rect(
+                windowRect.width - resizeGripSize, windowRect.height - resizeGripSize, resizeGripSize, resizeGripSize);
             GUI.Box(resizeGripRect, "");
 
             GUI.DragWindow(new Rect(0, 0, 10000, 20));

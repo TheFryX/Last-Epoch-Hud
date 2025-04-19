@@ -26,7 +26,8 @@ namespace Mod.Cheats
                             foreach (var light in lights)
                             {
                                 if (light.gameObject.name == "Directional Light" ||
-                                    light.gameObject.name == "Directional_DummyFogLight" && light.gameObject.activeSelf)
+                                    light.gameObject.name == "Directional_DummyFogLight" &&
+                                    light.gameObject.activeSelf)
                                 {
                                     if (light.dirty)
                                     {
@@ -45,6 +46,7 @@ namespace Mod.Cheats
             }
         }
 
+        #region player lantern working but not working
         public static void playerLantern(bool areaChanged = true)
         {
             if (Settings.playerLantern && areaChanged)
@@ -64,26 +66,79 @@ namespace Mod.Cheats
                             light.range = 35f;
                             light.enabled = true;
                             MelonLogger.Msg(
-                                $"Found player light: {light.gameObject.name}");
+                                $"[Mod] Found & patched player light: {light.gameObject.name}");
                             return;
                         }
                         else
                         {
-                            MelonLogger.Msg("No deactivated player light found");
+                            MelonLogger.Msg("[Mod] No deactivated player light found");
 
                             //light.intensity = 1f;
                             //light.range = 12f;
                             //light.enabled = false;
                             //someCondition2 = false;
                             MelonLogger.Msg(
-                                $"Found light: {light.gameObject.name}");
+                                $"[Mod] Found light: {light.gameObject.name}");
                         }
-                        MelonLogger.Msg("No player light found");
+                        MelonLogger.Msg("[Mod] No player light found");
                     }
                     else
-                        MelonLogger.Msg("No player light object found");
+                        MelonLogger.Msg("[Mod] No player light object found");
                 }
             }
         }
+        #endregion
+
+        #region coroutine to try and repeat patch lantern. why is it failing? melon coroutines?
+        //private static Coroutine? _lightCheckCoroutine;
+        //public static void playerLantern(bool areaChanged = true)
+        //{
+        //    if (Settings.playerLantern && areaChanged)
+        //    {
+        //        if (_lightCheckCoroutine != null)
+        //        {
+        //            // Stop the existing coroutine if it's already running  
+        //            MelonCoroutines.Stop(_lightCheckCoroutine);
+        //        }
+
+        //        // Start a new coroutine to periodically check the light  
+        //        _lightCheckCoroutine = (Coroutine)MelonCoroutines.Start(CheckAndPatchPlayerLight());
+        //    }
+        //    else if (!Settings.playerLantern && _lightCheckCoroutine != null)
+        //    {
+        //        // Stop the coroutine if the mod is disabled  
+        //        MelonCoroutines.Stop(_lightCheckCoroutine);
+        //        _lightCheckCoroutine = null;
+        //    }
+        //}
+
+        //private static IEnumerator CheckAndPatchPlayerLight()
+        //{
+        //    while (true)
+        //    {
+        //        var player = ObjectManager.GetLocalPlayer();
+        //        if (player == null) yield break;
+
+        //        var lights = player.GetComponentsInChildren<Light>(true);
+
+        //        foreach (var light in lights)
+        //        {
+        //            if (light.gameObject.name == "Front Spot Light")
+        //            {
+        //                if (!light.enabled)
+        //                {
+        //                    light.intensity = 3f;
+        //                    light.range = 35f;
+        //                    light.enabled = true;
+        //                    MelonLogger.Msg($"[Mod] Found & patched player light: {light.gameObject.name}");
+        //                }
+        //            }
+        //        }
+
+        //        // Wait for 10 seconds before checking again  
+        //        yield return new WaitForSeconds(10f);
+        //    }
+        //}
+        #endregion
     }
 }

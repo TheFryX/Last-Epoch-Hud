@@ -97,7 +97,7 @@ namespace Mod.Cheats.Patches
             private static bool isPatched = false;
             public static void Postfix(CameraManager __instance)
             {
-                if (!isPatched)
+                if (!isPatched && Settings.cameraZoomUnlock)
                 {
                     MelonLogger.Msg("[Mod] CameraManager hooked");
                     //MelonLogger.Msg("zoomDefault: " + __instance.zoomDefault.ToString());
@@ -109,6 +109,13 @@ namespace Mod.Cheats.Patches
                     // zoomDefault: -17.5
                     // zoomMin: -7
                 }
+                else if (isPatched && !Settings.cameraZoomUnlock)
+                {
+                    //MelonLogger.Msg("[Mod] CameraManager unhooked");
+                    __instance.zoomDefault = -17.5f;
+                    isPatched = false;
+                    MelonLogger.Msg("[Mod] Camera max zoom unpatched (1x)");
+                }
             }
         }
 
@@ -119,7 +126,7 @@ namespace Mod.Cheats.Patches
             private static bool isPatched = false;
             public static void Prefix(ref DMMapZoom __instance)
             {
-                if (!isPatched)
+                if (!isPatched && Settings.minimapZoomUnlock)
                 {
                     //MelonLogger.Msg("DMMapZoom hooked");
                     //MelonLogger.Msg("minimap zoomDefault: " + __instance.maxMinimapZoom.ToString());
@@ -127,6 +134,13 @@ namespace Mod.Cheats.Patches
                     isPatched = true;
                     MelonLogger.Msg("[Mod] minimap max zoom patched ()");
                     // zoomdefault: 37.5
+                }
+                else if (isPatched && !Settings.minimapZoomUnlock)
+                {
+                    //MelonLogger.Msg("[Mod] DMMapZoom unhooked");
+                    __instance.maxMinimapZoom = 37.5f;
+                    isPatched = false;
+                    MelonLogger.Msg("[Mod] minimap max zoom unpatched (1x)");
                 }
             }
         }
