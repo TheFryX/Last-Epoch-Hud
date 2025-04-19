@@ -32,7 +32,7 @@ namespace Mod.Cheats
                                     if (light.dirty)
                                     {
                                         light.dirty = false;
-                                        MelonLogger.Msg("[Mod] patched fog");
+                                        MelonLogger.Msg("patched fog");
                                         //MelonLogger.Msg(
                                         //    $"Found fog light: {light.gameObject.name}, " +
                                         //    $"rootObj: {rootObject.name}, " +
@@ -66,24 +66,24 @@ namespace Mod.Cheats
                             light.range = 35f;
                             light.enabled = true;
                             MelonLogger.Msg(
-                                $"[Mod] Found & patched player light: {light.gameObject.name}");
+                                $"Found & patched player light: {light.gameObject.name}");
                             return;
                         }
                         else
                         {
-                            //MelonLogger.Msg("[Mod] No deactivated player light found");
+                            //MelonLogger.Msg("No deactivated player light found");
 
                             //light.intensity = 1f;
                             //light.range = 12f;
                             //light.enabled = false;
                             //someCondition2 = false;
                             //MelonLogger.Msg(
-                            //    $"[Mod] Found light: {light.gameObject.name}");
+                            //    $"Found light: {light.gameObject.name}");
                         }
-                        //MelonLogger.Msg("[Mod] No player light found");
+                        //MelonLogger.Msg("No player light found");
                     }
                     //else
-                        //MelonLogger.Msg("[Mod] No player light object found");
+                        //MelonLogger.Msg("No player light object found");
                 }
             }
         }
