@@ -18,6 +18,7 @@ using AccessTools = HarmonyLib.AccessTools;
 //using static Il2Cpp.UIChat;
 using Il2CppTMPro;
 using Il2CppDMM;
+using static MelonLoader.LoaderConfig;
 
 namespace Mod.Cheats.Patches
 {
@@ -89,6 +90,34 @@ namespace Mod.Cheats.Patches
         // il2CppLE->il2Cpp->Il2CppLE.Services->ChatManager->_LogErrorAndSendTelemetryEvent_d__36
         // il2CppLE->il2Cpp->Il2CppPlayFab->Il2CppPlayFab->PlayFabEventsAPI->WriteTelemetryEvents()
 
+        [HarmonyPatch]
+        [HarmonyPatch(typeof(CameraManager), "OnEnable")]
+        public class Camera_ : MelonMod
+        {
+            public static void Postfix(CameraManager __instance)
+            {
+                MelonLogger.Msg("CameraManager");
+                MelonLogger.Msg("zoomDefault: " + __instance.zoomDefault.ToString());
+                MelonLogger.Msg("zoomMin: " + __instance.zoomMin.ToString());
+                MelonLogger.Msg("reverseZoomDirection: " + __instance.reverseZoomDirection.ToString());
+                // zoomDefault: -17.5
+                // zoomMin: -7
+            }
+        }
+
+        [HarmonyPatch]
+        [HarmonyPatch(typeof(DMMapZoom), "ZoomOutMinimap")]
+        public class DMMapZoom_ZoomOutMinimap : MelonMod
+        {
+            public static void Prefix(ref DMMapZoom __instance)
+            {
+                MelonLogger.Msg("DMMapZoom");
+                MelonLogger.Msg("zoomDefault: " + __instance.maxMinimapZoom.ToString());
+                __instance.maxMinimapZoom = float.MaxValue;
+
+            }
+        }
+
         [HarmonyPatch(typeof(DMMapIcon), "UpdateIcons")]
         public class DMMapIconHooks
         {
@@ -128,6 +157,7 @@ namespace Mod.Cheats.Patches
                 }
             }
         }
+
         [HarmonyPatch(typeof(DMMapWorldIcon), "SetIcon")]
         public class DMMapWorldIconHooks
         {
@@ -144,7 +174,7 @@ namespace Mod.Cheats.Patches
             {
                 if (__instance != null)
                 {
-                    MelonLogger.Msg($"[Mod] DMMapIconManager.SetIcon Postfix instance: {__instance.name}");
+                    //MelonLogger.Msg($"[Mod] DMMapIconManager.SetIcon Postfix instance: {__instance.name}");
 
                     //MelonLogger.Msg($"[Mod] DMMapWorldIcon.SetIcon Postfix currentIcon: {__instance.currentIcon}");
                     //MelonLogger.Msg($"[Mod] DMMapWorldIcon.SetIcon Postfix IconType: {__instance.icon}");
@@ -160,7 +190,7 @@ namespace Mod.Cheats.Patches
             {
                 if (__instance != null)
                 {
-                    MelonLogger.Msg($"[Mod] DMMapIconManager.Start Prefix instance: {__instance.name}");
+                    //MelonLogger.Msg($"[Mod] DMMapIconManager.Start Prefix instance: {__instance.name}");
 
                     //MelonLogger.Msg($"[Mod] DMMapIconManager.Start Prefix currentIcon: {__instance.currentIcon}");
                     //MelonLogger.Msg($"[Mod] DMMapIconManager.Start Prefix IconType: {__instance.icon}");
@@ -170,7 +200,7 @@ namespace Mod.Cheats.Patches
             {
                 if (__instance != null)
                 {
-                    MelonLogger.Msg($"[Mod] DMMapIconManager.Start Postfix instance: {__instance.name}");
+                    //MelonLogger.Msg($"[Mod] DMMapIconManager.Start Postfix instance: {__instance.name}");
 
                     //MelonLogger.Msg($"[Mod] DMMapWorldIcon.Start Postfix currentIcon: {__instance.currentIcon}");
                     //MelonLogger.Msg($"[Mod] DMMapWorldIcon.Start Postfix IconType: {__instance.icon}");
@@ -209,7 +239,7 @@ namespace Mod.Cheats.Patches
         {
             if (__instance == null) return;
 
-            MelonLogger.Msg($"[Mod] BaseDMMapIcon.initialise Postfix: {__instance.name}");
+            //MelonLogger.Msg($"[Mod] BaseDMMapIcon.initialise Postfix: {__instance.name}");
         }
 
         // this one fires every frame, we should avoid hooking into it unless necessary
