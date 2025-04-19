@@ -92,7 +92,7 @@ namespace Mod
             GUILayout.EndHorizontal();
 
             GUILayout.Label("Draw Distance: " + Settings.drawDistance.ToString("F1"));
-            Settings.drawDistance = GUILayout.HorizontalSlider(Settings.drawDistance, 0.0f, 100.0f);
+            Settings.drawDistance = GUILayout.HorizontalSlider(Settings.drawDistance, 0.0f, 300.0f);
 
             GUILayout.Label("Auto Health Potion HP Threshold: " + Settings.autoHealthPotion.ToString("F1"));
             Settings.autoHealthPotion = GUILayout.HorizontalSlider(Settings.autoHealthPotion, 0.0f, 100.0f);
