@@ -58,32 +58,34 @@ namespace Mod.Cheats
         internal static bool someCondition2 = true;
         public static void playerLantern(bool areaChanged = true)
         {
-            if (someCondition2 && areaChanged)
-            {
-                var player = ObjectManager.GetLocalPlayer();
-                if (player == null) return;
+            //if (someCondition2 && areaChanged)
+            //{
+            //    var player = ObjectManager.GetLocalPlayer();
+            //    if (player == null) return;
 
-                var lights = player.GetComponent<Light>();
-                if (someCondition && lights != null)
-                {
-                    lights.intensity = 3f;
-                    lights.range = 35f;
-                    lights.enabled = true;
-                }
-                else if (!someCondition && lights != null)
-                {
-                    //MelonLogger.Msg("Player light component found");
-                    lights.intensity = 0f;
-                    lights.range = 0f;
-                    lights.enabled = false;
-                }
-                someCondition = false;
-            }
-            else
-            {
-                someCondition = false;
-                //MelonLogger.Msg("Player light component not found");
-            }
+            //    var lights = player.GetComponent<Light>();
+            //    if (someCondition2 && lights != null)
+            //    {
+            //        MelonLogger.Msg("Player light component found");
+            //        lights.intensity = 3f;
+            //        lights.range = 35f;
+            //        lights.enabled = true;
+            //    }
+            //    else if (!someCondition2 && lights != null)
+            //    {
+            //        MelonLogger.Msg("Player light component not found");
+            //        lights.intensity = 1f;
+            //        lights.range = 12f;
+            //        lights.enabled = false;
+            //    }
+            //    someCondition2 = false;
+            //    MelonLogger.Msg("Player light component not found2");
+            //}
+            //else
+            //{
+            //    someCondition = false;
+            //    MelonLogger.Msg("Player light component not found3");
+            //}
         }
     }
 }
