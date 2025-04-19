@@ -26,6 +26,7 @@ namespace Mod.Cheats
                             foreach (var light in lights)
                             {
                                 if (light.gameObject.name == "Directional Light" ||
+                                    light.gameObject.name == "HXObject" ||
                                     light.gameObject.name == "Directional_DummyFogLight" &&
                                     light.gameObject.activeSelf)
                                 {
