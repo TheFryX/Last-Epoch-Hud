@@ -39,9 +39,7 @@ namespace Mod
 
         public override void OnSceneWasLoaded(int buildindex, string sceneName) // Runs when a Scene has Loaded and is passed the Scene's Build Index and Name.
         {
-            //MelonLogger.Msg("OnSceneWasLoaded: " + buildindex.ToString() + " | " + sceneName);
-            GameMods.someCondition = true;
-            GameMods.FogRemover(true);
+            //MelonLogger.Msg("OnSceneWasLoaded: " + buildindex.ToString() + " | " + sceneName); // occurs before scene init
         }
 
         public override void OnSceneWasInitialized(int buildindex, string sceneName) // Runs when a Scene has Initialized and is passed the Scene's Build Index and Name.
@@ -65,6 +63,8 @@ namespace Mod
             {
                 ObjectManager.OnSceneLoaded();
                 MapHack.OnSceneWasLoaded();
+                GameMods.someCondition = true;
+                GameMods.FogRemover(true);
             }
             catch (System.Exception e)
             {
