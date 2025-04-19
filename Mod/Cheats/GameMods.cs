@@ -20,7 +20,7 @@ namespace Mod.Cheats
                 foreach (var light in allLights)
                 {
                     if (light.gameObject.name == "Directional Light" || 
-                        light.gameObject.name == "Directional_DummyFogLight" && light.gameObject.activeInHierarchy)
+                        light.gameObject.name == "Directional_DummyFogLight" && light.gameObject.activeSelf)
                     {
                         if (light.dirty)
                         {
@@ -31,6 +31,7 @@ namespace Mod.Cheats
                     }
                     else
                     {
+                        someCondition = false;
                         MelonLogger.Msg("No fog light found");
                     }
                 }
