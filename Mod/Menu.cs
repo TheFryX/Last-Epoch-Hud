@@ -1,10 +1,4 @@
-﻿using MelonLoader;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
+﻿using UnityEngine;
 using static UnityEngine.GUI;
 
 namespace Mod
@@ -18,6 +12,7 @@ namespace Mod
         public static bool npcDrawingsDropdown = false;
         public static bool npcClassificationsDropdown = false;
         public static bool itemDrawingsDropdown = false;
+        public static bool gamePatchesDropdown = false;
 
         public static void DrawModWindow(int windowID)
         {
@@ -79,17 +74,20 @@ namespace Mod
 
             #region spacing
             GUILayout.Space(10); // something wrong with our melon trampoline, dont use space() for now
-            //GUILayout.BeginHorizontal();
-            //GUILayout.Label("", GUILayout.Width(20));
-            //GUILayout.EndHorizontal();
             #endregion
 
-            Settings.mapHack = GUILayout.Toggle(Settings.mapHack, "Map Hack");
+            gamePatchesDropdown = GUILayout.Toggle(gamePatchesDropdown, "Game Patches:", "button");
+            if (gamePatchesDropdown)
+            {
+                Settings.removeFog = GUILayout.Toggle(Settings.removeFog, "Remove Fog");
+                Settings.cameraZoomUnlock = GUILayout.Toggle(Settings.cameraZoomUnlock, "Camera Zoom Unlock");
+                Settings.minimapZoomUnlock = GUILayout.Toggle(Settings.minimapZoomUnlock, "Minimap Zoom Unlock");
+                Settings.mapHack = GUILayout.Toggle(Settings.mapHack, "Map Hack");
+            }
 
-            GUILayout.BeginHorizontal();
-            GUILayout.Space(20);
-            GUILayout.Label("* This requires a rezone (at the moment)");
-            GUILayout.EndHorizontal();
+            #region spacing
+            GUILayout.Space(10); // something wrong with our melon trampoline, dont use space() for now
+            #endregion
 
             GUILayout.Label("Draw Distance: " + Settings.drawDistance.ToString("F1"));
             Settings.drawDistance = GUILayout.HorizontalSlider(Settings.drawDistance, 0.0f, 300.0f);

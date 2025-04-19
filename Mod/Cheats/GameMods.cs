@@ -1,7 +1,4 @@
 ﻿using UnityEngine;
-//using Mod.Utils;
-using Mod.Game;
-using System.Runtime.Serialization;
 using ObjectManager = Mod.Game.ObjectManager;
 using Il2Cpp;
 using MelonLoader;
@@ -11,11 +8,9 @@ namespace Mod.Cheats
 {
     internal static class GameMods
     {
-        internal static bool someCondition = true;
-
         public static void FogRemover(bool areaChanged = true)
         {
-            if (someCondition && areaChanged)
+            if (Settings.removeFog && areaChanged)
             {
                 // Iterate through all loaded scenes
                 for (int i = 0; i < SceneManager.sceneCount; i++)
@@ -36,11 +31,11 @@ namespace Mod.Cheats
                                     if (light.dirty)
                                     {
                                         light.dirty = false;
-                                        someCondition = false;
-                                        MelonLogger.Msg(
-                                            $"Found fog light: {light.gameObject.name}, " +
-                                            $"rootObj: {rootObject.name}, " +
-                                            $"scene: {scene.name}");
+                                        MelonLogger.Msg("[Mod] patched fog");
+                                        //MelonLogger.Msg(
+                                        //    $"Found fog light: {light.gameObject.name}, " +
+                                        //    $"rootObj: {rootObject.name}, " +
+                                        //    $"scene: {scene.name}");
                                     }
                                 }
                             }
@@ -48,44 +43,47 @@ namespace Mod.Cheats
                     }
                 }
             }
-            else
-            {
-                someCondition = false;
-                //MelonLogger.Msg("No fog light found");
-            }
         }
 
-        internal static bool someCondition2 = true;
         public static void playerLantern(bool areaChanged = true)
         {
-            //if (someCondition2 && areaChanged)
-            //{
-            //    var player = ObjectManager.GetLocalPlayer();
-            //    if (player == null) return;
+            if (Settings.playerLantern && areaChanged)
+            {
+                var player = ObjectManager.GetLocalPlayer();
+                if (player == null) return;
 
-            //    var lights = player.GetComponent<Light>();
-            //    if (someCondition2 && lights != null)
-            //    {
-            //        MelonLogger.Msg("Player light component found");
-            //        lights.intensity = 3f;
-            //        lights.range = 35f;
-            //        lights.enabled = true;
-            //    }
-            //    else if (!someCondition2 && lights != null)
-            //    {
-            //        MelonLogger.Msg("Player light component not found");
-            //        lights.intensity = 1f;
-            //        lights.range = 12f;
-            //        lights.enabled = false;
-            //    }
-            //    someCondition2 = false;
-            //    MelonLogger.Msg("Player light component not found2");
-            //}
-            //else
-            //{
-            //    someCondition = false;
-            //    MelonLogger.Msg("Player light component not found3");
-            //}
+                var lights = player.GetComponentsInChildren<Light>(true);
+
+                foreach (var light in lights)
+                {
+                    if (light.gameObject.name == "Front Spot Light")
+                    {
+                        if (!light.enabled)
+                        {
+                            light.intensity = 3f;
+                            light.range = 35f;
+                            light.enabled = true;
+                            MelonLogger.Msg(
+                                $"Found player light: {light.gameObject.name}");
+                            return;
+                        }
+                        else
+                        {
+                            MelonLogger.Msg("No deactivated player light found");
+
+                            //light.intensity = 1f;
+                            //light.range = 12f;
+                            //light.enabled = false;
+                            //someCondition2 = false;
+                            MelonLogger.Msg(
+                                $"Found light: {light.gameObject.name}");
+                        }
+                        MelonLogger.Msg("No player light found");
+                    }
+                    else
+                        MelonLogger.Msg("No player light object found");
+                }
+            }
         }
     }
 }

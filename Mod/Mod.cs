@@ -3,7 +3,7 @@ using Mod.Cheats;
 using Mod.Cheats.ESP;
 using Mod.Game;
 
-[assembly: MelonInfo(typeof(Mod.Mod), "Mod", "0.2.0", "Daxx")]
+[assembly: MelonInfo(typeof(Mod.Mod), "Mod", "0.2.1", "Daxx")]
 [assembly: MelonGame("Eleventh Hour Games", "Last Epoch")]
 
 namespace Mod
@@ -14,7 +14,7 @@ namespace Mod
         public const string Description = "Mod for Testing"; // Description for the Mod.  (Set as null if none)
         public const string Author = "Daxx"; // Author of the Mod.  (MUST BE SET)
         public const string Company = null; // Company that made the Mod.  (Set as null if none)
-        public const string Version = "0.2.0"; // Version of the Mod.  (MUST BE SET)
+        public const string Version = "0.2.1"; // Version of the Mod.  (MUST BE SET)
         public const string DownloadLink = null; // Download Link for the Mod.  (Set as null if none)
     }
 
@@ -64,10 +64,7 @@ namespace Mod
                 ObjectManager.OnSceneLoaded();
                 MapHack.OnSceneWasLoaded();
 
-                GameMods.someCondition = true;
                 GameMods.FogRemover(true);
-
-                GameMods.someCondition2 = true;
                 GameMods.playerLantern(true);
             }
             catch (System.Exception e)

@@ -1,9 +1,4 @@
 ﻿using Il2Cpp;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Mod
 {
@@ -13,6 +8,10 @@ namespace Mod
         public static float drawDistance = 100.0f;
         public static float autoHealthPotion = 50.0f;
         public static bool useLootFilter = true;
+        public static bool removeFog = true;
+        public static bool cameraZoomUnlock = true;
+        public static bool minimapZoomUnlock = true;
+        public static bool playerLantern = true;
 
         public static Dictionary<string, bool> npcClassifications = new Dictionary<string, bool>
         {
