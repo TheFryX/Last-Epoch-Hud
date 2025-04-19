@@ -109,12 +109,17 @@ namespace Mod.Cheats.Patches
         [HarmonyPatch(typeof(DMMapZoom), "ZoomOutMinimap")]
         public class DMMapZoom_ZoomOutMinimap : MelonMod
         {
+            private static bool isPatched = false;
             public static void Prefix(ref DMMapZoom __instance)
             {
-                MelonLogger.Msg("DMMapZoom");
-                MelonLogger.Msg("zoomDefault: " + __instance.maxMinimapZoom.ToString());
-                __instance.maxMinimapZoom = float.MaxValue;
-
+                if (!isPatched)
+                {
+                    //MelonLogger.Msg("DMMapZoom");
+                    MelonLogger.Msg("minimap zoomDefault: " + __instance.maxMinimapZoom.ToString());
+                    __instance.maxMinimapZoom = float.MaxValue;
+                    MelonLogger.Msg("minimap Zoom patched");
+                    // zoomdefault: 37.5
+                }
             }
         }
 
