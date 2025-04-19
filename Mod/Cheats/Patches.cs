@@ -99,7 +99,7 @@ namespace Mod.Cheats.Patches
             {
                 if (!isPatched && Settings.cameraZoomUnlock)
                 {
-                    MelonLogger.Msg("[Mod] CameraManager hooked");
+                    //MelonLogger.Msg("[Mod] CameraManager hooked");
                     //MelonLogger.Msg("zoomDefault: " + __instance.zoomDefault.ToString());
                     //MelonLogger.Msg("zoomMin: " + __instance.zoomMin.ToString());
                     //MelonLogger.Msg("reverseZoomDirection: " + __instance.reverseZoomDirection.ToString());

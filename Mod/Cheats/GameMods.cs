@@ -71,19 +71,19 @@ namespace Mod.Cheats
                         }
                         else
                         {
-                            MelonLogger.Msg("[Mod] No deactivated player light found");
+                            //MelonLogger.Msg("[Mod] No deactivated player light found");
 
                             //light.intensity = 1f;
                             //light.range = 12f;
                             //light.enabled = false;
                             //someCondition2 = false;
-                            MelonLogger.Msg(
-                                $"[Mod] Found light: {light.gameObject.name}");
+                            //MelonLogger.Msg(
+                            //    $"[Mod] Found light: {light.gameObject.name}");
                         }
-                        MelonLogger.Msg("[Mod] No player light found");
+                        //MelonLogger.Msg("[Mod] No player light found");
                     }
-                    else
-                        MelonLogger.Msg("[Mod] No player light object found");
+                    //else
+                        //MelonLogger.Msg("[Mod] No player light object found");
                 }
             }
         }
