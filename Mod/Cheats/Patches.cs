@@ -81,6 +81,8 @@ namespace Mod.Cheats.Patches
         public class Camera_ : MelonMod
         {
             //todo: getting kicked due to idle can cause this to stop triggering somehow
+            //todo: also appears to not work in offline mode (low prio). probably uses a diff camera manager
+            //todo: or maybe it just breaks when switching to offline at char select
             private static bool isPatched = false;
             public static void Postfix(CameraManager __instance)
             {
