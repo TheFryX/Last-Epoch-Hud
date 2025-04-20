@@ -29,6 +29,7 @@ namespace Mod.Cheats
                             {
                                 if (light.gameObject.name == "Directional Light" ||
                                     light.gameObject.name == "HXObject" ||
+                                    light.gameObject.name == "DummyLight" ||
                                     light.gameObject.name == "Directional_DummyFogLight")
                                 {
                                     if (light.dirty)
