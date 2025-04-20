@@ -10,6 +10,7 @@ namespace Mod.Cheats
 
         public static void UseHealthPotion()
         {
+            if (Settings.useAutoPot == false) return;
             if (DateTime.Now - lastUse < TimeSpan.FromSeconds(1)) return;
 
             lastUse = DateTime.Now;

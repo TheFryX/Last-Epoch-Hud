@@ -88,8 +88,12 @@ namespace Mod
             GUILayout.Label("Draw Distance: " + Settings.drawDistance.ToString("F1"));
             Settings.drawDistance = GUILayout.HorizontalSlider(Settings.drawDistance, 0.0f, 300.0f);
 
-            GUILayout.Label("Auto HP Pot Threshold %: " + Settings.autoHealthPotion.ToString("F1"));
-            Settings.autoHealthPotion = GUILayout.HorizontalSlider(Settings.autoHealthPotion, 0.0f, 100.0f);
+            Settings.useAutoPot = GUILayout.Toggle(Settings.useAutoPot, "Auto HP Pot");
+            if (Settings.useAutoPot)
+            {
+                GUILayout.Label("Auto HP Pot Threshold %: " + Settings.autoHealthPotion.ToString("F1"));
+                Settings.autoHealthPotion = GUILayout.HorizontalSlider(Settings.autoHealthPotion, 0.0f, 100.0f);
+            }
 
             GUILayout.EndVertical();
 
