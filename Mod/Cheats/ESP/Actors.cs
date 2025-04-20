@@ -1,12 +1,5 @@
 ﻿using Il2Cpp;
-using Il2CppDMM;
-using Mod.Cheats.Patches;
 using Mod.Game;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Mod.Cheats.ESP
@@ -57,10 +50,29 @@ namespace Mod.Cheats.ESP
                 foreach (var actor in visual.visuals._list)
                 {
                     if (!actor.gameObject.activeInHierarchy) continue;
-                    if (actor.GetComponent<ActorDisplayInformation>() != null && 
-                        !Settings.ShouldDrawNPCClassification(actor.GetComponent<ActorDisplayInformation>().actorClass)) continue;
+                    //todo: loot lizards have a component LootLizardFleeing
 
-                    float distance = Vector3.Distance(actor.transform.position, localPlayer.transform.position);
+                    //if (actor.GetComponent<ActorDisplayInformation>() != null && 
+                    //    !Settings.ShouldDrawNPCClassification(actor.GetComponent<ActorDisplayInformation>()
+                    //    .actorClass)) continue;
+
+                    var displayInfo = actor.GetComponent<ActorDisplayInformation>();
+                    if (displayInfo != null)
+                    {
+                        if (actor.gameObject.GetComponent<LootLizardFleeing>() != null ||
+                            actor.gameObject.GetComponentInParent<LootLizardFleeing>() != null ||
+                            actor.gameObject.GetComponentInChildren<LootLizardFleeing>() != null)
+                        {
+                            goto skip1;
+                        }
+                        if (!Settings.ShouldDrawNPCClassification(displayInfo.actorClass))
+                        {
+                            continue;
+                        }
+                    }
+                skip1:
+                    float distance = Vector3.Distance(
+                        actor.transform.position, localPlayer.transform.position);
 
                     if (distance >= Settings.drawDistance || actor.dead) continue;
 
@@ -70,18 +82,19 @@ namespace Mod.Cheats.ESP
                     position.y += 0.5f;
 
                     ESP.AddLine(localPlayer.transform.position, actor.transform.position, color);
-                    ESP.AddString(name + " (" + distance.ToString("F1") + ")", position, color);
+                    //ESP.AddString(name + " (" + distance.ToString("F1") + ")", position, color);
+                    ESP.AddString(name, position, color);
 
                     // prototype that didnt quite work. will revisit later
                     // Check and initialize DMMapIcon if it does not exist
                     //DMMapWorldIcon mapIcon = actor.GetComponent<DMMapWorldIcon>();
                     //if (mapIcon == null)
                     //{
-                        //MapIconPatch.InitializeDMMapIcon(actor.gameObject);
+                    //MapIconPatch.InitializeDMMapIcon(actor.gameObject);
 
-                        //var actorGO = actor.gameObject;
-                        //actorGO.AddComponent<MapIconPatch>();
-                        //mapIcon = actor.GetComponent<DMMapWorldIcon>(); // retrieve the newly added component
+                    //var actorGO = actor.gameObject;
+                    //actorGO.AddComponent<MapIconPatch>();
+                    //mapIcon = actor.GetComponent<DMMapWorldIcon>(); // retrieve the newly added component
                     //}
                 }
             }

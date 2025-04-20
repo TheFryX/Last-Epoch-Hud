@@ -1,9 +1,4 @@
-﻿using MelonLoader;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Mod.Cheats;
 using UnityEngine;
 using static UnityEngine.GUI;
 
@@ -18,6 +13,7 @@ namespace Mod
         public static bool npcDrawingsDropdown = false;
         public static bool npcClassificationsDropdown = false;
         public static bool itemDrawingsDropdown = false;
+        public static bool gamePatchesDropdown = false;
 
         public static void DrawModWindow(int windowID)
         {
@@ -70,10 +66,6 @@ namespace Mod
                             Settings.itemDrawings[entry.Key] = result;
                         }
                     }
-                    //if (!lootFilterEnabled || entry.Key != "Gold Piles")
-                    //{
-
-                    //}
                 }
 
                 GUI.enabled = true;
@@ -81,22 +73,37 @@ namespace Mod
 
             GUI.enabled = true;
 
-            Settings.mapHack = GUILayout.Toggle(Settings.mapHack, "Map Hack");
+            gamePatchesDropdown = GUILayout.Toggle(gamePatchesDropdown, "Game Patches:", "button");
+            if (gamePatchesDropdown)
+            {
+                bool previousRemoveFog = Settings.removeFog;
+                Settings.removeFog = GUILayout.Toggle(Settings.removeFog, "Remove Fog");
+                if (Settings.removeFog != previousRemoveFog)
+                    GameMods.FogRemover(); // Trigger FogRemover when toggled  
 
-            GUILayout.BeginHorizontal();
-            GUILayout.Space(20);
-            GUILayout.Label("* This requires a rezone (at the moment)");
-            GUILayout.EndHorizontal();
+                Settings.cameraZoomUnlock = GUILayout.Toggle(Settings.cameraZoomUnlock, "Camera Zoom Unlock");
+                Settings.minimapZoomUnlock = GUILayout.Toggle(Settings.minimapZoomUnlock, "Minimap Zoom Unlock");
+                Settings.mapHack = GUILayout.Toggle(Settings.mapHack, "Map Hack");
+            }
+
+            #region spacing
+            GUILayout.Space(10); // something wrong with our melon trampoline, dont use space() for now
+            #endregion
 
             GUILayout.Label("Draw Distance: " + Settings.drawDistance.ToString("F1"));
-            Settings.drawDistance = GUILayout.HorizontalSlider(Settings.drawDistance, 0.0f, 100.0f);
+            Settings.drawDistance = GUILayout.HorizontalSlider(Settings.drawDistance, 0.0f, 300.0f);
 
-            GUILayout.Label("Auto Health Potion HP Threshold: " + Settings.autoHealthPotion.ToString("F1"));
-            Settings.autoHealthPotion = GUILayout.HorizontalSlider(Settings.autoHealthPotion, 0.0f, 100.0f);
+            Settings.useAutoPot = GUILayout.Toggle(Settings.useAutoPot, "Auto HP Pot");
+            if (Settings.useAutoPot)
+            {
+                GUILayout.Label("Auto HP Pot Threshold %: " + Settings.autoHealthPotion.ToString("F1"));
+                Settings.autoHealthPotion = GUILayout.HorizontalSlider(Settings.autoHealthPotion, 0.0f, 100.0f);
+            }
 
             GUILayout.EndVertical();
 
-            Rect resizeGripRect = new Rect(windowRect.width - resizeGripSize, windowRect.height - resizeGripSize, resizeGripSize, resizeGripSize);
+            Rect resizeGripRect = new Rect(
+                windowRect.width - resizeGripSize, windowRect.height - resizeGripSize, resizeGripSize, resizeGripSize);
             GUI.Box(resizeGripRect, "");
 
             GUI.DragWindow(new Rect(0, 0, 10000, 20));

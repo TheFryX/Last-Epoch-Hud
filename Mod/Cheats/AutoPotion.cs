@@ -1,14 +1,5 @@
 ﻿using Il2Cpp;
-using Il2CppLE.Networking;
-using Il2CppLE.Services.Models;
-using MelonLoader;
 using Mod.Game;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static Il2CppRewired.Demos.GamepadTemplateUI.GamepadTemplateUI;
 
 namespace Mod.Cheats
 {
@@ -19,6 +10,7 @@ namespace Mod.Cheats
 
         public static void UseHealthPotion()
         {
+            if (Settings.useAutoPot == false) return;
             if (DateTime.Now - lastUse < TimeSpan.FromSeconds(1)) return;
 
             lastUse = DateTime.Now;
@@ -32,7 +24,7 @@ namespace Mod.Cheats
                 var reapercheck = localPlayer.GetComponentInChildren<ChangeHealthMaterialDuringLifetime>();
                 if (reapercheck != null && reapercheck.materialToChangeTo == UIGlobeHealth.AlternateMaterial.ReaperForm)
                 {
-                    MelonLogger.Msg("Reaper is active, not using health potion.");
+                    //MelonLogger.Msg("Reaper is active, not using health potion.");
                     return;
                 }
                 healthPotion.PotionKeyPressed();

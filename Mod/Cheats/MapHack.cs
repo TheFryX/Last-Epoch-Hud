@@ -1,9 +1,5 @@
 ﻿using Il2Cpp;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Mod.Cheats
@@ -25,7 +21,7 @@ namespace Mod.Cheats
                     minimapFogOfWar.discoveryDistance = 5000.0f;
                 }
             }
-            else
+            else if (!Settings.mapHack)
             {
                 minimapFogOfWar.discoveryDistance = 20.0f;
             }
