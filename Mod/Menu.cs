@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Mod.Cheats;
+using UnityEngine;
 using static UnityEngine.GUI;
 
 namespace Mod
@@ -75,7 +76,11 @@ namespace Mod
             gamePatchesDropdown = GUILayout.Toggle(gamePatchesDropdown, "Game Patches:", "button");
             if (gamePatchesDropdown)
             {
+                bool previousRemoveFog = Settings.removeFog;
                 Settings.removeFog = GUILayout.Toggle(Settings.removeFog, "Remove Fog");
+                if (Settings.removeFog != previousRemoveFog)
+                    GameMods.FogRemover(); // Trigger FogRemover when toggled  
+
                 Settings.cameraZoomUnlock = GUILayout.Toggle(Settings.cameraZoomUnlock, "Camera Zoom Unlock");
                 Settings.minimapZoomUnlock = GUILayout.Toggle(Settings.minimapZoomUnlock, "Minimap Zoom Unlock");
                 Settings.mapHack = GUILayout.Toggle(Settings.mapHack, "Map Hack");
