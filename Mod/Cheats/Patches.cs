@@ -2,10 +2,7 @@
 using Il2Cpp;
 using HarmonyPatch = HarmonyLib.HarmonyPatch;
 using MelonLoader;
-using HarmonyPostfix = HarmonyLib.HarmonyPostfix;
-using Il2CppDMM;
 using static MelonLoader.LoaderConfig;
-using Il2CppLE.UI.Login.UnityUI;
 using Il2CppLE.UI;
 
 namespace Mod.Cheats.Patches
@@ -60,23 +57,10 @@ namespace Mod.Cheats.Patches
     [HarmonyPatch]
     internal class HarmonyPatches
     {
-        // todo implement patches to guard accident accidental self reports of modifying the game
+        // TODO: implement patches to guard against accidental self reports of modifying the game
+
         // patch out the bug report button, and for redundancy the SendBugToServer() function
-        // il2Cppscripts->il2cpp->BugReportWriter->SendBugToServer
-        // il2CppLE->il2Cpp->UIBase->OpenBugReportPanel()
-        // il2CppLE->il2Cpp->CharacterSelectPanelUI->OpenBugReport()
-        // il2CppLE->il2Cpp->Il2CppLE.Telemetry->ClientSessionAnalytics->BugReported()
-        // il2CppLE->il2Cpp->Il2CppLE.Telemetry->ClientSessionAnalytics->OnBugReported()
-        // il2CppLE->il2Cpp->Il2CppLE.Telemetry->ISessionAnalytics->OnBugReported()
         // il2CppLE->il2Cpp->il2CppLELE.Utility->ClickUp->SubmitNewBugReport()
-
-        // probably should patch out the crash reporter just incase
-        // UnityEngine.CrashReportingModule->UnityEngine.CrashReportHandler->CrashReportHandler()
-        // UnityEngine.CoreModule->UnityEngine->CrashReport()
-
-        // other possibly related hooks to patch out
-        // il2CppLE->il2Cpp->Il2CppLE.Services->ChatManager->_LogErrorAndSendTelemetryEvent_d__36
-        // il2CppLE->il2Cpp->Il2CppPlayFab->Il2CppPlayFab->PlayFabEventsAPI->WriteTelemetryEvents()
 
         #region security / detection patches
         [HarmonyPatch(typeof(UIBase), "Awake")]
@@ -84,10 +68,21 @@ namespace Mod.Cheats.Patches
         {
             public static void Prefix(ref UIBase __instance)
             {
-                MelonLogger.Msg("[Mod] UIBase.Awake hooked.");
+                MelonLogger.Msg("[Mod] UIBase.Awake hooked. Disabling bug submission");
                 //__instance.gameObject.SetActive(false);
                 __instance.bugReportButton.gameObject.SetActive(false);
                 __instance.bugReportPanel.Close();
+                return;
+            }
+        }
+
+        [HarmonyPatch(typeof(CharacterSelect), "Awake")]
+        public class CharacterSelect_ : MelonMod
+        {
+            public static void Prefix(ref CharacterSelect __instance)
+            {
+                MelonLogger.Msg("[Mod] CharacterSelect.Awake hooked. Disabling bug submission");
+                __instance.submitBugReportButton.gameObject.SetActive(false);
                 return;
             }
         }
@@ -97,6 +92,7 @@ namespace Mod.Cheats.Patches
         {
             public static void Prefix(ref UIBase __instance)
             {
+                
                 MelonLogger.Msg("[Mod] UIBase.OpenBugReportPanel hooked");
                 //__instance.gameObject.SetActive(false);
                 __instance.bugReportButton.gameObject.SetActive(false);
@@ -127,16 +123,16 @@ namespace Mod.Cheats.Patches
             }
         }
 
-        [HarmonyPatch(typeof(CharacterSelectPanelUI), "OpenBugReport")]
-        public class CharacterSelectPanelUI_OpenBugReport : MelonMod
-        {
-            public static void Prefix(ref CharacterSelectPanelUI __instance)
-            {
-                MelonLogger.Msg("[Mod] CharacterSelectPanelUI.OpenBugReport hooked");
-                //__instance.gameObject.SetActive(false);
-                return;
-            }
-        }
+        //[HarmonyPatch(typeof(CharacterSelectPanelUI), "OpenBugReport")]
+        //public class CharacterSelectPanelUI_OpenBugReport : MelonMod
+        //{
+        //    public static void Prefix(ref CharacterSelectPanelUI __instance)
+        //    {
+        //        MelonLogger.Msg("[Mod] CharacterSelectPanelUI.OpenBugReport hooked. Disabling bug submission");
+        //        //__instance.gameObject.SetActive(false);
+        //        return;
+        //    }
+        //}
 
         //[HarmonyPatch(typeof(LandingZonePanel), "OnAwake")]
         //public class LandingZonePanel_ : MelonMod
@@ -146,17 +142,6 @@ namespace Mod.Cheats.Patches
         //        MelonLogger.Msg("[Mod] LandingZonePanel.OnAwake hooked");
         //    }
         //}
-
-        [HarmonyPatch(typeof(CharacterSelect), "Awake")]
-        public class CharacterSelect_ : MelonMod
-        {
-            public static void Prefix(ref CharacterSelect __instance)
-            {
-                MelonLogger.Msg("[Mod] CharacterSelect.Awake hooked");
-                __instance.submitBugReportButton.gameObject.SetActive(false);
-                return;
-            }
-        }
         #endregion
 
         #region active game patches

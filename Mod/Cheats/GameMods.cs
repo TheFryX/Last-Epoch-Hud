@@ -10,8 +10,8 @@ namespace Mod.Cheats
     {
         public static void FogRemover(bool areaChanged = true)
         {
-            //todo: getting kicked due to idle can cause this to stop triggering somehow
-            //todo: alternatively we may need to do more checks then just sceneInit (x2)
+            //todo: getting kicked due to idle can cause this to stop triggering. staleness?
+            //todo: alternatively we may need to do more checks then just sceneInit (x3)
             if (Settings.removeFog && areaChanged)
             {
                 MelonLogger.Msg($"Patching fog");
@@ -28,21 +28,10 @@ namespace Mod.Cheats
                             var lights = rootObject.GetComponentsInChildren<HxVolumetricLight>(true);
                             foreach (var light in lights)
                             {
-                                //if (light.gameObject.name == "Directional Light" ||
-                                //    light.gameObject.name == "HXObject" ||
-                                //    light.gameObject.name == "DummyLight" ||
-                                //    light.gameObject.name == "SecondaryDirectionalLight_Dummy" ||
-                                //    light.gameObject.name == "Directional_DummyFogLight")
-                                //{
                                 if (light.dirty)
                                     {
                                         light.dirty = false;
-                                        //MelonLogger.Msg(
-                                        //    $"Found fog light: {light.gameObject.name}, " +
-                                        //    $"rootObj: {rootObject.name}, " +
-                                        //    $"scene: {scene.name}");
                                     }
-                                //}
                             }
                         }
                     }

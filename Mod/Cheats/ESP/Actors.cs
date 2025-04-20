@@ -71,7 +71,8 @@ namespace Mod.Cheats.ESP
                         }
                     }
                 skip1:
-                    float distance = Vector3.Distance(actor.transform.position, localPlayer.transform.position);
+                    float distance = Vector3.Distance(
+                        actor.transform.position, localPlayer.transform.position);
 
                     if (distance >= Settings.drawDistance || actor.dead) continue;
 
