@@ -80,6 +80,7 @@ namespace Mod.Cheats.Patches
         [HarmonyPatch(typeof(CameraManager), "ApplyZoom")]
         public class Camera_ : MelonMod
         {
+            //todo: getting kicked due to idle can cause this to stop triggering somehow
             private static bool isPatched = false;
             public static void Postfix(CameraManager __instance)
             {

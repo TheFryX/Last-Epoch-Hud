@@ -10,6 +10,8 @@ namespace Mod.Cheats
     {
         public static void FogRemover(bool areaChanged = true)
         {
+            //todo: getting kicked due to idle can cause this to stop triggering somehow
+            //todo: alternatively we may need to do more checks then just sceneInit
             if (Settings.removeFog && areaChanged)
             {
                 // Iterate through all loaded scenes
