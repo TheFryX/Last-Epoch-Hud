@@ -3,7 +3,7 @@ using Mod.Cheats;
 using Mod.Cheats.ESP;
 using Mod.Game;
 
-[assembly: MelonInfo(typeof(Mod.Mod), "Mod", "0.2.2", "Daxx")]
+[assembly: MelonInfo(typeof(Mod.Mod), "Mod", "0.2.3", "Daxx")]
 [assembly: MelonGame("Eleventh Hour Games", "Last Epoch")]
 
 namespace Mod
@@ -14,7 +14,7 @@ namespace Mod
         public const string Description = "Mod for Testing"; // Description for the Mod.  (Set as null if none)
         public const string Author = "Daxx"; // Author of the Mod.  (MUST BE SET)
         public const string Company = null; // Company that made the Mod.  (Set as null if none)
-        public const string Version = "0.2.2"; // Version of the Mod.  (MUST BE SET)
+        public const string Version = "0.2.3"; // Version of the Mod.  (MUST BE SET)
         public const string DownloadLink = null; // Download Link for the Mod.  (Set as null if none)
     }
 
@@ -40,6 +40,7 @@ namespace Mod
         public override void OnSceneWasLoaded(int buildindex, string sceneName) // Runs when a Scene has Loaded and is passed the Scene's Build Index and Name.
         {
             //MelonLogger.Msg("OnSceneWasLoaded: " + buildindex.ToString() + " | " + sceneName); // occurs before scene init
+            GameMods.FogRemover(true); // to see if this is enough to check for it
         }
 
         public override void OnSceneWasInitialized(int buildindex, string sceneName) // Runs when a Scene has Initialized and is passed the Scene's Build Index and Name.
@@ -67,7 +68,7 @@ namespace Mod
                 GameMods.FogRemover(true);
                 GameMods.playerLantern(true);
             }
-            catch (System.Exception e)
+            catch (Exception e)
             {
                 MelonLogger.Error(e.ToString());
             }
@@ -103,7 +104,6 @@ namespace Mod
         {
             //MelonLogger.Msg("OnLateUpdate");
         }
-
 
         public override void OnGUI() // Can run multiple times per frame. Mostly used for Unity's IMGUI.
         {

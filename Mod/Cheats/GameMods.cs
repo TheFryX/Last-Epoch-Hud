@@ -18,7 +18,7 @@ namespace Mod.Cheats
                 for (int i = 0; i < SceneManager.sceneCount; i++)
                 {
                     Scene scene = SceneManager.GetSceneAt(i);
-                    if (scene.isLoaded)
+                    if (scene.isLoaded || scene.isSubScene)
                     {
                         // Get all root objects in the scene
                         var rootObjects = scene.GetRootGameObjects();
@@ -27,12 +27,13 @@ namespace Mod.Cheats
                             var lights = rootObject.GetComponentsInChildren<HxVolumetricLight>(true);
                             foreach (var light in lights)
                             {
-                                if (light.gameObject.name == "Directional Light" ||
-                                    light.gameObject.name == "HXObject" ||
-                                    light.gameObject.name == "DummyLight" ||
-                                    light.gameObject.name == "Directional_DummyFogLight")
-                                {
-                                    if (light.dirty)
+                                //if (light.gameObject.name == "Directional Light" ||
+                                //    light.gameObject.name == "HXObject" ||
+                                //    light.gameObject.name == "DummyLight" ||
+                                //    light.gameObject.name == "SecondaryDirectionalLight_Dummy" ||
+                                //    light.gameObject.name == "Directional_DummyFogLight")
+                                //{
+                                if (light.dirty)
                                     {
                                         //todo: test if removes 'bloodrain' fog on harvested titan maps
                                         light.dirty = false;
@@ -42,7 +43,7 @@ namespace Mod.Cheats
                                         //    $"rootObj: {rootObject.name}, " +
                                         //    $"scene: {scene.name}");
                                     }
-                                }
+                                //}
                             }
                         }
                     }
@@ -53,6 +54,7 @@ namespace Mod.Cheats
         #region player lantern working but not working
         public static void playerLantern(bool areaChanged = true)
         {
+            //todo: investigate Local Player(Clone)/Player Lights<ConstantRotation>
             if (Settings.playerLantern && areaChanged)
             {
                 var player = ObjectManager.GetLocalPlayer();
