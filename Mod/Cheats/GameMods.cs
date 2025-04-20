@@ -14,13 +14,13 @@ namespace Mod.Cheats
             //todo: alternatively we may need to do more checks then just sceneInit (x2)
             if (Settings.removeFog && areaChanged)
             {
+                MelonLogger.Msg($"Patching fog");
                 // Iterate through all loaded scenes
                 for (int i = 0; i < SceneManager.sceneCount; i++)
                 {
                     Scene scene = SceneManager.GetSceneAt(i);
                     if (scene.isLoaded || scene.isSubScene)
                     {
-                        MelonLogger.Msg($"Patching fog for: {scene.name}");
                         // Get all root objects in the scene
                         var rootObjects = scene.GetRootGameObjects();
                         foreach (var rootObject in rootObjects)
