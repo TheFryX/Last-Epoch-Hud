@@ -34,15 +34,15 @@ namespace Mod
             GUI.Label(new Rect(upperLeft, size), content);
         }
 
-        //public static void DrawString(Vector3 worldPosition, string label, Color color, bool centered = true)
-        //{
-        //    var backup = StringStyle.normal.textColor;
-        //    StringStyle.normal.textColor = color;
-        //    DrawString(worldPosition, label, centered);
-        //    StringStyle.normal.textColor = backup;
-        //}
-
         public static void DrawString(Vector3 worldPosition, string label, Color color, bool centered = true)
+        {
+            var backup = StringStyle.normal.textColor;
+            StringStyle.normal.textColor = color;
+            DrawString(worldPosition, label, centered);
+            StringStyle.normal.textColor = backup;
+        }
+
+        public static void DrawCustomString(Vector3 worldPosition, string label, Color color, bool centered = true)
         {
             Vector3 screen = Camera.main.WorldToScreenPoint(worldPosition);
             screen.y = Screen.height - screen.y;
@@ -50,18 +50,29 @@ namespace Mod
             // Clamp the label to the screen
             Vector2 position = ClampToScreen(screen, new Vector2(25, 25));
 
-            var content = new GUIContent(label);
-            var size = StringStyle.CalcSize(content);
-            var upperLeft = centered ? position - size / 2f : position;
+            // Split the label into two parts: first 3 characters and the rest
+            string firstPart = label.Length > 3 ? label.Substring(0, 3) : label;
+            string secondPart = label.Length > 3 ? label.Substring(3) : string.Empty;
+
+            var firstContent = new GUIContent(firstPart);
+            var secondContent = new GUIContent(secondPart);
+
+            var firstSize = StringStyle.CalcSize(firstContent);
+            var secondSize = StringStyle.CalcSize(secondContent);
+
+            var totalSize = new Vector2(firstSize.x + secondSize.x, Mathf.Max(firstSize.y, secondSize.y));
+            var upperLeft = centered ? position - totalSize / 2f : position;
 
             // Backup the current GUI color
             Color prevColor = GUI.color;
 
-            // Set the desired color
+            // Draw the first part with the custom color
             GUI.color = color;
+            GUI.Label(new Rect(upperLeft, firstSize), firstContent);
 
-            // Draw the label
-            GUI.Label(new Rect(upperLeft, size), content);
+            // Draw the second part with the default color
+            GUI.color = prevColor;
+            GUI.Label(new Rect(new Vector2(upperLeft.x + firstSize.x, upperLeft.y), secondSize), secondContent);
 
             // Restore the previous GUI color
             GUI.color = prevColor;
