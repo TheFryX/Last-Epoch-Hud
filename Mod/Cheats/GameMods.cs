@@ -20,6 +20,7 @@ namespace Mod.Cheats
                     Scene scene = SceneManager.GetSceneAt(i);
                     if (scene.isLoaded || scene.isSubScene)
                     {
+                        MelonLogger.Msg($"Patching fog for: {scene.name}");
                         // Get all root objects in the scene
                         var rootObjects = scene.GetRootGameObjects();
                         foreach (var rootObject in rootObjects)
@@ -35,9 +36,7 @@ namespace Mod.Cheats
                                 //{
                                 if (light.dirty)
                                     {
-                                        //todo: test if removes 'bloodrain' fog on harvested titan maps
                                         light.dirty = false;
-                                        //MelonLogger.Msg($"Patched fog for: {scene.name}");
                                         //MelonLogger.Msg(
                                         //    $"Found fog light: {light.gameObject.name}, " +
                                         //    $"rootObj: {rootObject.name}, " +
