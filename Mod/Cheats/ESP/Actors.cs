@@ -60,7 +60,7 @@ namespace Mod.Cheats.ESP
                     if (displayInfo != null)
                     {
                         // Check if a specific component exists in the parent hierarchy
-                        if (actor.gameObject.GetComponentInParent<LootLizardFleeing>() == null &&
+                        if (actor.gameObject.GetComponentInChildren<LootLizardFleeing>() == null &&
                             !Settings.ShouldDrawNPCClassification(displayInfo.actorClass))
                         {
                             continue;
