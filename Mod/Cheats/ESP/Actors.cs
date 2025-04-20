@@ -50,8 +50,22 @@ namespace Mod.Cheats.ESP
                 foreach (var actor in visual.visuals._list)
                 {
                     if (!actor.gameObject.activeInHierarchy) continue;
-                    if (actor.GetComponent<ActorDisplayInformation>() != null && 
-                        !Settings.ShouldDrawNPCClassification(actor.GetComponent<ActorDisplayInformation>().actorClass)) continue;
+                    //todo: loot lizards have a component LootLizardFleeing
+
+                    //if (actor.GetComponent<ActorDisplayInformation>() != null && 
+                    //    !Settings.ShouldDrawNPCClassification(actor.GetComponent<ActorDisplayInformation>()
+                    //    .actorClass)) continue;
+
+                    var displayInfo = actor.GetComponent<ActorDisplayInformation>();
+                    if (displayInfo != null)
+                    {
+                        // Check if a specific component exists in the parent hierarchy
+                        if (actor.gameObject.GetComponentInParent<LootLizardFleeing>() == null &&
+                            !Settings.ShouldDrawNPCClassification(displayInfo.actorClass))
+                        {
+                            continue;
+                        }
+                    }
 
                     float distance = Vector3.Distance(actor.transform.position, localPlayer.transform.position);
 
