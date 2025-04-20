@@ -37,7 +37,7 @@ namespace Mod.Cheats
                                     {
                                         //todo: test if removes 'bloodrain' fog on harvested titan maps
                                         light.dirty = false;
-                                        MelonLogger.Msg($"Patched fog for: {scene.name}");
+                                        //MelonLogger.Msg($"Patched fog for: {scene.name}");
                                         //MelonLogger.Msg(
                                         //    $"Found fog light: {light.gameObject.name}, " +
                                         //    $"rootObj: {rootObject.name}, " +
