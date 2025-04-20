@@ -59,14 +59,18 @@ namespace Mod.Cheats.ESP
                     var displayInfo = actor.GetComponent<ActorDisplayInformation>();
                     if (displayInfo != null)
                     {
-                        // Check if a specific component exists in the parent hierarchy
-                        if (actor.gameObject.GetComponentInChildren<LootLizardFleeing>() == null &&
-                            !Settings.ShouldDrawNPCClassification(displayInfo.actorClass))
+                        if (actor.gameObject.GetComponent<LootLizardFleeing>() != null ||
+                            actor.gameObject.GetComponentInParent<LootLizardFleeing>() != null ||
+                            actor.gameObject.GetComponentInChildren<LootLizardFleeing>() != null)
+                        {
+                            goto skip1;
+                        }
+                        if (!Settings.ShouldDrawNPCClassification(displayInfo.actorClass))
                         {
                             continue;
                         }
                     }
-
+                skip1:
                     float distance = Vector3.Distance(actor.transform.position, localPlayer.transform.position);
 
                     if (distance >= Settings.drawDistance || actor.dead) continue;
