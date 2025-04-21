@@ -39,7 +39,7 @@ namespace Mod.Cheats.ESP
             if (ActorManager.instance == null) return;
 
             var localPlayer = ObjectManager.GetLocalPlayer();
-            if (localPlayer == null) return; // Ensure localPlayer is not null
+            if (localPlayer == null) return;
 
             foreach (var visual in ActorManager.instance.visuals)
             {
@@ -76,7 +76,6 @@ namespace Mod.Cheats.ESP
                     if (distance >= Settings.drawDistance || actor.dead) continue;
 
                     var name = GetActorName(actor);
-
                     var position = actor.GetHealthBarPosition();
                     position.y += 0.5f;
 
