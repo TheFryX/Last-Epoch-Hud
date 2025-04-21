@@ -52,8 +52,8 @@ namespace Mod
                 ObjectManager.OnSceneLoaded();
                 MapHack.OnSceneWasLoaded();
 
-                GameMods.FogRemover(true);
-                GameMods.playerLantern(true);
+                GameMods.FogRemover();
+                GameMods.playerLantern();
             }
             catch (Exception e)
             {

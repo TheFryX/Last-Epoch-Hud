@@ -8,11 +8,11 @@ namespace Mod.Cheats
 {
     internal static class GameMods
     {
-        public static void FogRemover(bool areaChanged = true)
+        public static void FogRemover()
         {
             //todo: getting kicked due to idle can cause this to stop triggering. staleness?
             //todo: alternatively we may need to do more checks then just sceneInit (x3)
-            if (Settings.removeFog && areaChanged)
+            if (Settings.removeFog)
             {
                 MelonLogger.Msg($"Patching fog");
                 // Iterate through all loaded scenes
@@ -39,15 +39,13 @@ namespace Mod.Cheats
             }
         }
 
-        public static void playerLantern(bool areaChanged = true)
+        public static void playerLantern()
         {
-            if (Settings.playerLantern && areaChanged)
+            if (Settings.playerLantern)
             {
                 var player = ObjectManager.GetLocalPlayer();
                 if (player == null) return;
-
                 var light = player.GetComponent<Light>();
-
                 if (light != null && !light.enabled)
                 {
                     light.intensity = 2.5f;
