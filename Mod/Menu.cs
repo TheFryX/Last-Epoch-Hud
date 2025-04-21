@@ -79,11 +79,16 @@ namespace Mod
                 bool previousRemoveFog = Settings.removeFog;
                 Settings.removeFog = GUILayout.Toggle(Settings.removeFog, "Remove Fog");
                 if (Settings.removeFog != previousRemoveFog)
-                    GameMods.FogRemover(); // Trigger FogRemover when toggled  
+                    GameMods.FogRemover();
 
                 Settings.cameraZoomUnlock = GUILayout.Toggle(Settings.cameraZoomUnlock, "Camera Zoom Unlock");
                 Settings.minimapZoomUnlock = GUILayout.Toggle(Settings.minimapZoomUnlock, "Minimap Zoom Unlock");
                 Settings.mapHack = GUILayout.Toggle(Settings.mapHack, "Map Hack");
+
+                bool previousPlayerLantern = Settings.playerLantern;
+                Settings.playerLantern = GUILayout.Toggle(Settings.playerLantern, "Player Lantern");
+                if (Settings.playerLantern != previousPlayerLantern)
+                    GameMods.playerLantern();
             }
 
             #region spacing

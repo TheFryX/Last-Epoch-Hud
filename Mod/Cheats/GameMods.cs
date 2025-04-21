@@ -64,6 +64,21 @@ namespace Mod.Cheats
                     return;
                 }
             }
+            else if (!Settings.playerLantern)
+            {
+                var player = ObjectManager.GetLocalPlayer();
+                if (player == null) return;
+                var light = player.GetComponent<Light>();
+                if (light != null)
+                {
+                    light.enabled = false;
+                    MelonLogger.Msg($"Disabled player lantern");
+                }
+                else
+                {
+                    MelonLogger.Msg($"Player lantern not found");
+                }
+            }
         }
     }
 }
