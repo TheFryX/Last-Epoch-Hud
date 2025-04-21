@@ -50,7 +50,6 @@ namespace Mod.Cheats.ESP
                 foreach (var actor in visual.visuals._list)
                 {
                     if (!actor.gameObject.activeInHierarchy) continue;
-                    //todo: loot lizards have a component LootLizardFleeing
 
                     //if (actor.GetComponent<ActorDisplayInformation>() != null && 
                     //    !Settings.ShouldDrawNPCClassification(actor.GetComponent<ActorDisplayInformation>()
@@ -99,6 +98,7 @@ namespace Mod.Cheats.ESP
                 }
             }
         }
+
         public static void OnUpdate()
         {
             if (ObjectManager.HasPlayer())

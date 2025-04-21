@@ -1,7 +1,5 @@
 ﻿using Il2Cpp;
-using Il2CppInterop.Common.Attributes;
 using Il2CppInterop.Runtime;
-using Il2CppInterop.Runtime.InteropTypes;
 using Il2CppItemFiltering;
 using MelonLoader;
 using System.Reflection;
