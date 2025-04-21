@@ -86,5 +86,10 @@ namespace Mod
 
             return npcClassifications[classificationKey];
         }
+
+        public static bool ShouldDrawShrine(string shrineType)
+        {
+            return shrineType == "Shrine of Scales" || shrineType == "Shrine of Shards";
+        }
     }
 }
