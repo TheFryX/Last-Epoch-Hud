@@ -55,8 +55,9 @@ namespace Mod.Cheats.ESP
                     //    !Settings.ShouldDrawNPCClassification(actor.GetComponent<ActorDisplayInformation>()
                     //    .actorClass)) continue;
 
-                    var displayInfo = actor.GetComponent<ActorDisplayInformation>();
-                    if (displayInfo != null)
+                    var actorDisplayInfo = actor.GetComponent<ActorDisplayInformation>();
+                    var displayInfo = actor.GetComponent<DisplayInformation>();
+                    if (actorDisplayInfo != null)
                     {
                         if (actor.gameObject.GetComponent<LootLizardFleeing>() != null ||
                             actor.gameObject.GetComponentInParent<LootLizardFleeing>() != null ||
@@ -64,7 +65,7 @@ namespace Mod.Cheats.ESP
                         {
                             goto skip1;
                         }
-                        if (!Settings.ShouldDrawNPCClassification(displayInfo.actorClass))
+                        if (!Settings.ShouldDrawNPCClassification(actorDisplayInfo.actorClass))
                         {
                             continue;
                         }
@@ -80,7 +81,7 @@ namespace Mod.Cheats.ESP
                     position.y += 0.5f;
 
                     ESP.AddLine(localPlayer.transform.position, actor.transform.position, color);
-                    //ESP.AddString(name + " (" + distance.ToString("F1") + ")", position, color);
+                    //ESP.AddString(name + " (" + distance.ToString("F1") + ")  ", position, color);
                     ESP.AddString(name, position, color);
 
                     // prototype that didnt quite work. will revisit later
