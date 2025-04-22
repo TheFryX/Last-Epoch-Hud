@@ -39,7 +39,7 @@ namespace Mod.Cheats.ESP
             if (ActorManager.instance == null) return;
 
             var localPlayer = ObjectManager.GetLocalPlayer();
-            if (localPlayer == null) return; // Ensure localPlayer is not null
+            if (localPlayer == null) return;
 
             foreach (var visual in ActorManager.instance.visuals)
             {
@@ -50,14 +50,14 @@ namespace Mod.Cheats.ESP
                 foreach (var actor in visual.visuals._list)
                 {
                     if (!actor.gameObject.activeInHierarchy) continue;
-                    //todo: loot lizards have a component LootLizardFleeing
 
                     //if (actor.GetComponent<ActorDisplayInformation>() != null && 
                     //    !Settings.ShouldDrawNPCClassification(actor.GetComponent<ActorDisplayInformation>()
                     //    .actorClass)) continue;
 
-                    var displayInfo = actor.GetComponent<ActorDisplayInformation>();
-                    if (displayInfo != null)
+                    var actorDisplayInfo = actor.GetComponent<ActorDisplayInformation>();
+                    var displayInfo = actor.GetComponent<DisplayInformation>();
+                    if (actorDisplayInfo != null)
                     {
                         if (actor.gameObject.GetComponent<LootLizardFleeing>() != null ||
                             actor.gameObject.GetComponentInParent<LootLizardFleeing>() != null ||
@@ -65,7 +65,7 @@ namespace Mod.Cheats.ESP
                         {
                             goto skip1;
                         }
-                        if (!Settings.ShouldDrawNPCClassification(displayInfo.actorClass))
+                        if (!Settings.ShouldDrawNPCClassification(actorDisplayInfo.actorClass))
                         {
                             continue;
                         }
@@ -77,12 +77,11 @@ namespace Mod.Cheats.ESP
                     if (distance >= Settings.drawDistance || actor.dead) continue;
 
                     var name = GetActorName(actor);
-
                     var position = actor.GetHealthBarPosition();
                     position.y += 0.5f;
 
                     ESP.AddLine(localPlayer.transform.position, actor.transform.position, color);
-                    //ESP.AddString(name + " (" + distance.ToString("F1") + ")", position, color);
+                    //ESP.AddString(name + " (" + distance.ToString("F1") + ")  ", position, color);
                     ESP.AddString(name, position, color);
 
                     // prototype that didnt quite work. will revisit later
@@ -99,6 +98,7 @@ namespace Mod.Cheats.ESP
                 }
             }
         }
+
         public static void OnUpdate()
         {
             if (ObjectManager.HasPlayer())

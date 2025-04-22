@@ -23,10 +23,7 @@ namespace Mod.Cheats
             {
                 var reapercheck = localPlayer.GetComponentInChildren<ChangeHealthMaterialDuringLifetime>();
                 if (reapercheck != null && reapercheck.materialToChangeTo == UIGlobeHealth.AlternateMaterial.ReaperForm)
-                {
-                    //MelonLogger.Msg("Reaper is active, not using health potion.");
                     return;
-                }
                 healthPotion.PotionKeyPressed();
             }
         }

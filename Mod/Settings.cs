@@ -12,7 +12,7 @@ namespace Mod
         public static bool removeFog = true;
         public static bool cameraZoomUnlock = true;
         public static bool minimapZoomUnlock = true;
-        public static bool playerLantern = false;
+        public static bool playerLantern = true;
 
         public static Dictionary<string, bool> npcClassifications = new Dictionary<string, bool>
         {
@@ -85,6 +85,11 @@ namespace Mod
             }
 
             return npcClassifications[classificationKey];
+        }
+
+        public static bool ShouldDrawShrine(string shrineType)
+        {
+            return shrineType == "Shrine of Scales" || shrineType == "Shrine of Shards";
         }
     }
 }

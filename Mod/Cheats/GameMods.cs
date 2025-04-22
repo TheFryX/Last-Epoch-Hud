@@ -8,11 +8,11 @@ namespace Mod.Cheats
 {
     internal static class GameMods
     {
-        public static void FogRemover(bool areaChanged = true)
+        public static void FogRemover()
         {
             //todo: getting kicked due to idle can cause this to stop triggering. staleness?
             //todo: alternatively we may need to do more checks then just sceneInit (x3)
-            if (Settings.removeFog && areaChanged)
+            if (Settings.removeFog)
             {
                 MelonLogger.Msg($"Patching fog");
                 // Iterate through all loaded scenes
@@ -39,100 +39,46 @@ namespace Mod.Cheats
             }
         }
 
-        #region player lantern working but not working
-        public static void playerLantern(bool areaChanged = true)
+        public static void playerLantern()
         {
-            //todo: investigate Local Player(Clone)/Player Lights<ConstantRotation>
-            if (Settings.playerLantern && areaChanged)
+            if (Settings.playerLantern)
             {
                 var player = ObjectManager.GetLocalPlayer();
                 if (player == null) return;
-
-                var lights = player.GetComponentsInChildren<Light>(true);
-
-                foreach (var light in lights)
+                var light = player.GetComponent<Light>();
+                if (light != null && !light.enabled)
                 {
-                    if (light.gameObject.name == "Front Spot Light")
-                    {
-                        if (!light.enabled)
-                        {
-                            light.intensity = 3f;
-                            light.range = 35f;
-                            light.enabled = true;
-                            MelonLogger.Msg(
-                                $"Found & patched player light: {light.gameObject.name}");
-                            return;
-                        }
-                        else
-                        {
-                            //MelonLogger.Msg("No deactivated player light found");
-
-                            //light.intensity = 1f;
-                            //light.range = 12f;
-                            //light.enabled = false;
-                            //someCondition2 = false;
-                            //MelonLogger.Msg(
-                            //    $"Found light: {light.gameObject.name}");
-                        }
-                        //MelonLogger.Msg("No player light found");
-                    }
-                    //else
-                        //MelonLogger.Msg("No player light object found");
+                    light.intensity = 2.5f;
+                    light.range = 40f;
+                    light.enabled = true;
+                    MelonLogger.Msg($"Found & patched player lantern");
+                    return;
+                }
+                else if (light == null)
+                {
+                    light = player.AddComponent<Light>();
+                    light.intensity = 3f;
+                    light.range = 35f;
+                    light.enabled = true;
+                    MelonLogger.Msg($"Injected player lantern");
+                    return;
+                }
+            }
+            else if (!Settings.playerLantern)
+            {
+                var player = ObjectManager.GetLocalPlayer();
+                if (player == null) return;
+                var light = player.GetComponent<Light>();
+                if (light != null)
+                {
+                    light.enabled = false;
+                    MelonLogger.Msg($"Disabled player lantern");
+                }
+                else
+                {
+                    MelonLogger.Msg($"Player lantern not found");
                 }
             }
         }
-        #endregion
-
-        #region coroutine to try and repeat patch lantern. why is it failing? melon coroutines?
-        //private static Coroutine? _lightCheckCoroutine;
-        //public static void playerLantern(bool areaChanged = true)
-        //{
-        //    if (Settings.playerLantern && areaChanged)
-        //    {
-        //        if (_lightCheckCoroutine != null)
-        //        {
-        //            // Stop the existing coroutine if it's already running  
-        //            MelonCoroutines.Stop(_lightCheckCoroutine);
-        //        }
-
-        //        // Start a new coroutine to periodically check the light  
-        //        _lightCheckCoroutine = (Coroutine)MelonCoroutines.Start(CheckAndPatchPlayerLight());
-        //    }
-        //    else if (!Settings.playerLantern && _lightCheckCoroutine != null)
-        //    {
-        //        // Stop the coroutine if the mod is disabled  
-        //        MelonCoroutines.Stop(_lightCheckCoroutine);
-        //        _lightCheckCoroutine = null;
-        //    }
-        //}
-
-        //private static IEnumerator CheckAndPatchPlayerLight()
-        //{
-        //    while (true)
-        //    {
-        //        var player = ObjectManager.GetLocalPlayer();
-        //        if (player == null) yield break;
-
-        //        var lights = player.GetComponentsInChildren<Light>(true);
-
-        //        foreach (var light in lights)
-        //        {
-        //            if (light.gameObject.name == "Front Spot Light")
-        //            {
-        //                if (!light.enabled)
-        //                {
-        //                    light.intensity = 3f;
-        //                    light.range = 35f;
-        //                    light.enabled = true;
-        //                    MelonLogger.Msg($"[Mod] Found & patched player light: {light.gameObject.name}");
-        //                }
-        //            }
-        //        }
-
-        //        // Wait for 10 seconds before checking again  
-        //        yield return new WaitForSeconds(10f);
-        //    }
-        //}
-        #endregion
     }
 }

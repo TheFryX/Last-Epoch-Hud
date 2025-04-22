@@ -58,9 +58,9 @@ namespace Mod.Cheats.Patches
     internal class HarmonyPatches
     {
         // TODO: implement patches to guard against accidental self reports of modifying the game
-
-        // patch out the bug report button, and for redundancy the SendBugToServer() function
+        // patch out the SendBugToServer() function
         // il2CppLE->il2Cpp->il2CppLELE.Utility->ClickUp->SubmitNewBugReport()
+        // should also patch out the crash handler if possible
 
         #region security / detection patches
         [HarmonyPatch(typeof(UIBase), "Awake")]
