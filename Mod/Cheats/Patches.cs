@@ -6,6 +6,8 @@ using static MelonLoader.LoaderConfig;
 using Il2CppLE.UI;
 using Il2CppLE.Telemetry;
 using Il2CppInterop.Runtime.InteropTypes.Arrays;
+using Il2CppItemFiltering;
+using static Il2Cpp.GroundItemManager;
 
 
 namespace Mod.Cheats.Patches
@@ -258,6 +260,35 @@ namespace Mod.Cheats.Patches
                 }
             }
         }
+        #endregion
+
+        #region risky game patches
+        [HarmonyPatch(typeof(UIWaypointStandard), "OnPointerEnter", new Type[] { typeof(UnityEngine.EventSystems.PointerEventData) })]
+        internal class WayPointUnlock
+        {
+            public static void Prefix(UIWaypointStandard __instance, UnityEngine.EventSystems.PointerEventData eventData)
+            {
+                //MelonLogger.Msg("[Mod] UIWaypointStandard.OnPointerEnter hooked");
+
+                if (Settings.useAnyWaypoint)
+                    __instance.isActive = true;
+            }
+        }
+
+        //todo: partially working. disabled until can polish
+        //[HarmonyPatch(typeof(GroundItemManager), "dropItemForPlayer", new Type[] { typeof(Actor), typeof(ItemData), typeof(Vector3), typeof(bool) })]
+        //public class GroundItemManager_vacuumNearbyStackableItems
+        //{
+        //    public static void Postfix(ref GroundItemManager __instance, ref int __state, ref Actor player, ref ItemData itemData, ref Vector3 location, ref bool playDropSound)
+        //    {
+        //        MelonLogger.Msg("[Mod] GroundItemManager.dropItemForPlayer hooked");
+        //        if (ItemList.isCraftingItem(itemData.itemType) && Settings.pickupCrafting)
+        //        {
+        //            __instance.TryGetGroundItemList(player, out GroundItemList groundItemList);
+        //            __instance.vacuumNearbyStackableItems(player, groundItemList, location, StackableItemFlags.AllCrafting);
+        //        }
+        //    }
+        //}
         #endregion
 
         #region investigation hooks

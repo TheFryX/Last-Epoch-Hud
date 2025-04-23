@@ -3,7 +3,7 @@ using Mod.Cheats;
 using Mod.Cheats.ESP;
 using Mod.Game;
 
-[assembly: MelonInfo(typeof(Mod.Mod), "Mod", "0.2.7", "Daxx")]
+[assembly: MelonInfo(typeof(Mod.Mod), "Mod", "0.2.8", "Daxx")]
 [assembly: MelonGame("Eleventh Hour Games", "Last Epoch")]
 
 namespace Mod
@@ -14,7 +14,7 @@ namespace Mod
         public const string Description = "Mod for Last Epoch"; // Description for the Mod.  (Set as null if none)
         public const string Author = "Daxx"; // Author of the Mod.  (MUST BE SET)
         public const string Company = null; // Company that made the Mod.  (Set as null if none)
-        public const string Version = "0.2.7"; // Version of the Mod.  (MUST BE SET)
+        public const string Version = "0.2.8"; // Version of the Mod.  (MUST BE SET)
         public const string DownloadLink = null; // Download Link for the Mod.  (Set as null if none)
     }
 
@@ -52,7 +52,6 @@ namespace Mod
             {
                 ObjectManager.OnSceneLoaded();
                 MapHack.OnSceneWasLoaded();
-
                 GameMods.FogRemover();
                 GameMods.playerLantern();
             }
@@ -74,6 +73,8 @@ namespace Mod
                 ESP.OnUpdate();
                 AutoPotion.OnUpdate();
                 Menu.OnUpdate();
+                if (Settings.timeScale != 1.0f)
+                    UnityEngine.Time.timeScale = Settings.timeScale;
             }
             catch (Exception e)
             {

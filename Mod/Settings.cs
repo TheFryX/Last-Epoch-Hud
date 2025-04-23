@@ -7,12 +7,15 @@ namespace Mod
         public static bool mapHack = true;
         public static float drawDistance = 100.0f;
         public static float autoHealthPotion = 50.0f;
+        public static float timeScale = 1.0f;
         public static bool useAutoPot = true;
         public static bool useLootFilter = true;
         public static bool removeFog = true;
         public static bool cameraZoomUnlock = true;
         public static bool minimapZoomUnlock = true;
         public static bool playerLantern = true;
+        public static bool useAnyWaypoint = false;
+        //public static bool pickupCrafting = false;
 
         public static Dictionary<string, bool> npcClassifications = new Dictionary<string, bool>
         {

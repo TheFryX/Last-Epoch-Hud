@@ -14,6 +14,7 @@ namespace Mod
         public static bool npcClassificationsDropdown = false;
         public static bool itemDrawingsDropdown = false;
         public static bool gamePatchesDropdown = false;
+        public static bool riskyOptionsDropdown = false;
 
         public static void DrawModWindow(int windowID)
         {
@@ -91,8 +92,26 @@ namespace Mod
                     GameMods.playerLantern();
             }
 
+            riskyOptionsDropdown = GUILayout.Toggle(riskyOptionsDropdown, "Risky Options:", "button");
+            if (riskyOptionsDropdown)
+            {
+                GUILayout.Label("These options are provided at your own risk.");
+                #region spacing
+                GUILayout.Space(10);
+                #endregion
+
+                GUILayout.Label("TimeScale: " + Settings.timeScale.ToString("F1"));
+                Settings.timeScale = GUILayout.HorizontalSlider(Settings.timeScale, 0.1f, 6.0f);
+                #region spacing
+                GUILayout.Space(10);
+                #endregion
+
+                Settings.useAnyWaypoint = GUILayout.Toggle(Settings.useAnyWaypoint, "Allow Any Waypoint");
+                //Settings.pickupCrafting = GUILayout.Toggle(Settings.pickupCrafting, "Pickup Crafting Items");
+            }
+
             #region spacing
-            GUILayout.Space(10); // something wrong with our melon trampoline, dont use space() for now
+            GUILayout.Space(10);
             #endregion
 
             GUILayout.Label("Draw Distance: " + Settings.drawDistance.ToString("F1"));
