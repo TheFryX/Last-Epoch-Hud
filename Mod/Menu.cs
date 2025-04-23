@@ -97,15 +97,20 @@ namespace Mod
             {
                 GUILayout.Label("These options are provided at your own risk.");
                 #region spacing
-                GUILayout.Space(10); // something wrong with our melon trampoline, dont use space() for now
+                GUILayout.Space(10);
                 #endregion
 
                 GUILayout.Label("TimeScale: " + Settings.timeScale.ToString("F1"));
                 Settings.timeScale = GUILayout.HorizontalSlider(Settings.timeScale, 0.1f, 6.0f);
+                #region spacing
+                GUILayout.Space(10);
+                #endregion
+
+                Settings.useAnyWaypoint = GUILayout.Toggle(Settings.useAnyWaypoint, "Allow Any Waypoint");
             }
 
             #region spacing
-            GUILayout.Space(10); // something wrong with our melon trampoline, dont use space() for now
+            GUILayout.Space(10);
             #endregion
 
             GUILayout.Label("Draw Distance: " + Settings.drawDistance.ToString("F1"));

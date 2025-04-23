@@ -260,6 +260,20 @@ namespace Mod.Cheats.Patches
         }
         #endregion
 
+        #region risky game patches
+        [HarmonyPatch(typeof(UIWaypointStandard), "OnPointerEnter", new Type[] { typeof(UnityEngine.EventSystems.PointerEventData) })]
+        internal class WayPointUnlock
+        {
+            public static void Prefix(UIWaypointStandard __instance, UnityEngine.EventSystems.PointerEventData eventData)
+            {
+                //MelonLogger.Msg("[Mod] UIWaypointStandard.OnPointerEnter hooked");
+
+                if (Settings.useAnyWaypoint)
+                    __instance.isActive = true;
+            }
+        }
+        #endregion
+
         #region investigation hooks
         //[HarmonyPatch(typeof(DMMapIcon), "UpdateIcons")]
         //public class DMMapIconHooks
