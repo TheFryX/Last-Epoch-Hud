@@ -15,6 +15,7 @@ namespace Mod
         public static bool minimapZoomUnlock = true;
         public static bool playerLantern = true;
         public static bool useAnyWaypoint = false;
+        //public static bool pickupCrafting = false;
 
         public static Dictionary<string, bool> npcClassifications = new Dictionary<string, bool>
         {

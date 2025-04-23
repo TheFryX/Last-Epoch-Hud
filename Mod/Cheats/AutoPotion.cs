@@ -10,6 +10,7 @@ namespace Mod.Cheats
 
         public static void UseHealthPotion()
         {
+            //todo: not firing on offline mode in 1.2
             if (Settings.useAutoPot == false) return;
             if (DateTime.Now - lastUse < TimeSpan.FromSeconds(1)) return;
 

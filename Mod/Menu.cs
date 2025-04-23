@@ -107,6 +107,7 @@ namespace Mod
                 #endregion
 
                 Settings.useAnyWaypoint = GUILayout.Toggle(Settings.useAnyWaypoint, "Allow Any Waypoint");
+                //Settings.pickupCrafting = GUILayout.Toggle(Settings.pickupCrafting, "Pickup Crafting Items");
             }
 
             #region spacing
