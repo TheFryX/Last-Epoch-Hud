@@ -4,6 +4,9 @@ using HarmonyPatch = HarmonyLib.HarmonyPatch;
 using MelonLoader;
 using static MelonLoader.LoaderConfig;
 using Il2CppLE.UI;
+using Il2CppLE.Telemetry;
+using Il2CppInterop.Runtime.InteropTypes.Arrays;
+
 
 namespace Mod.Cheats.Patches
 {
@@ -68,11 +71,10 @@ namespace Mod.Cheats.Patches
         {
             public static void Prefix(ref UIBase __instance)
             {
-                MelonLogger.Msg("[Mod] UIBase.Awake hooked. Disabling bug submission");
+                MelonLogger.Msg("[Mod] UIBase.Awake hooked. Disabling bug submission button");
                 //__instance.gameObject.SetActive(false);
                 __instance.bugReportButton.gameObject.SetActive(false);
                 __instance.bugReportPanel.Close();
-                return;
             }
         }
 
@@ -81,45 +83,99 @@ namespace Mod.Cheats.Patches
         {
             public static void Prefix(ref CharacterSelect __instance)
             {
-                MelonLogger.Msg("[Mod] CharacterSelect.Awake hooked. Disabling bug submission");
+                MelonLogger.Msg("[Mod] CharacterSelect.Awake hooked. Disabling bug submission button");
                 __instance.submitBugReportButton.gameObject.SetActive(false);
-                return;
             }
         }
 
         [HarmonyPatch(typeof(UIBase), "OpenBugReportPanel")]
         public class UIBase_OpenBugReportPanel : MelonMod
         {
-            public static void Prefix(ref UIBase __instance)
+            public static bool Prefix(ref UIBase __instance)
             {
                 
-                MelonLogger.Msg("[Mod] UIBase.OpenBugReportPanel hooked");
+                MelonLogger.Msg("[Mod] UIBase.OpenBugReportPanel hooked and blocked.");
                 //__instance.gameObject.SetActive(false);
                 __instance.bugReportButton.gameObject.SetActive(false);
                 __instance.bugReportPanel.Close();
-                return;
+                return false;
             }
         }
 
         [HarmonyPatch(typeof(BugSubmitter), "Submit")]
         public class BugSubmitter_Submit : MelonMod
         {
-            public static void Prefix(ref BugSubmitter __instance)
+            public static bool Prefix(ref BugSubmitter __instance)
             {
-                MelonLogger.Msg("[Mod] BugSubmitter.Submit hooked");
+                MelonLogger.Msg("[Mod] BugSubmitter.Submit hooked and blocked.");
                 __instance.gameObject.gameObject.SetActive(false);
-                return;
+                return false;
             }
         }
 
         [HarmonyPatch(typeof(BugSubmitter), "ShowSubmitPanel")]
         public class BugSubmitter_ShowSubmitPanel : MelonMod
         {
-            public static void Prefix(ref BugSubmitter __instance)
+            public static bool Prefix(ref BugSubmitter __instance)
             {
-                MelonLogger.Msg("[Mod] BugSubmitter.ShowSubmitPanel hooked");
+                MelonLogger.Msg("[Mod] BugSubmitter.ShowSubmitPanel hooked and blocked.");
                 __instance.btn_Submit.gameObject.SetActive(false);
-                return;
+                return false;
+            }
+        }
+
+        [HarmonyPatch(typeof(ClientLogHandler), nameof(ClientLogHandler.LogFormat),
+            typeof(LogType), typeof(UnityEngine.Object), typeof(string), typeof(Il2CppReferenceArray<Il2CppSystem.Object>))]
+        public class ClientLogHandler_LogFormat : MelonMod
+        {
+            public static bool Prefix(LogType logType, UnityEngine.Object context, string format, Il2CppReferenceArray<Il2CppSystem.Object> args)
+            {
+                //MelonLogger.Msg("[Mod] ClientLogHandler.LogFormat hooked and blocked.");
+
+                // Log all elements
+                //MelonLogger.Msg($"LogType: {logType}");
+                //MelonLogger.Msg($"Context: {context?.name ?? "null"}");
+                //MelonLogger.Msg($"Format: {format}");
+
+                //if (args != null)
+                //{
+                //    for (int i = 0; i < args.Length; i++)
+                //    {
+                //        MelonLogger.Msg($"Arg[{i}]: {args[i]?.ToString() ?? "null"}");
+                //    }
+                //}
+                //else
+                //{
+                //    MelonLogger.Msg("Args: null");
+                //}
+
+                return false;
+            }
+        }
+
+        [HarmonyPatch(typeof(ClientLogHandler), nameof(ClientLogHandler.LogException),
+            typeof(Il2CppSystem.Exception), typeof(UnityEngine.Object))]
+        public class ClientLogHandler_LogException : MelonMod
+        {
+            public static bool Prefix(Il2CppSystem.Exception exception, UnityEngine.Object context)
+            {
+                MelonLogger.Msg("[Mod] ClientLogHandler.LogException hooked and blocked.");
+
+                // Log all elements
+                //MelonLogger.Msg($"Context: {context?.name ?? "null"}");
+                //MelonLogger.Msg($"Exception: {exception?.ToString() ?? "null"}");
+
+                return false;
+            }
+        }
+
+        [HarmonyPatch(typeof(AccountSupport), "GetLogsZip")]
+        public class AccountSupport_GetLogsZip : MelonMod
+        {
+            public static bool Prefix(AccountSupport __instance)
+            {
+                MelonLogger.Msg("[Mod] AccountSupport_GetLogsZip hooked and blocked.");
+                return false;
             }
         }
 
