@@ -14,6 +14,7 @@ namespace Mod
         public static bool npcClassificationsDropdown = false;
         public static bool itemDrawingsDropdown = false;
         public static bool gamePatchesDropdown = false;
+        public static bool riskyOptionsDropdown = false;
 
         public static void DrawModWindow(int windowID)
         {
@@ -89,6 +90,18 @@ namespace Mod
                 Settings.playerLantern = GUILayout.Toggle(Settings.playerLantern, "Player Lantern");
                 if (Settings.playerLantern != previousPlayerLantern)
                     GameMods.playerLantern();
+            }
+
+            riskyOptionsDropdown = GUILayout.Toggle(riskyOptionsDropdown, "Risky Options:", "button");
+            if (riskyOptionsDropdown)
+            {
+                GUILayout.Label("These options are provided at your own risk.");
+                #region spacing
+                GUILayout.Space(10); // something wrong with our melon trampoline, dont use space() for now
+                #endregion
+
+                GUILayout.Label("TimeScale: " + Settings.timeScale.ToString("F1"));
+                Settings.timeScale = GUILayout.HorizontalSlider(Settings.timeScale, 0.1f, 6.0f);
             }
 
             #region spacing
