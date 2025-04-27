@@ -268,7 +268,7 @@ namespace Mod
         {
             if (guiVisible)
             {
-                windowRect = GUI.Window(0, windowRect, (WindowFunction)DrawModWindow, "NPC Manager Mod");
+                windowRect = GUI.Window(0, windowRect, (WindowFunction)DrawModWindow, "Last Epoch Hud");
             }
         }
 

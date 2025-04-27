@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\TheFry\\Desktop\\Nowy folder (3)\\Mod\\Mod.csproj",
+      "projectUniqueName": "C:\\Users\\TheFry\\Desktop\\Last-Epoch-Hud-main\\Mod\\Mod.csproj",
       "projectName": "Mod",
-      "projectPath": "C:\\Users\\TheFry\\Desktop\\Nowy folder (3)\\Mod\\Mod.csproj",
+      "projectPath": "C:\\Users\\TheFry\\Desktop\\Last-Epoch-Hud-main\\Mod\\Mod.csproj",
       "packagesPath": "C:\\Users\\TheFry\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\TheFry\\Desktop\\Nowy folder (3)\\Mod\\obj\\",
+      "outputPath": "C:\\Users\\TheFry\\Desktop\\Last-Epoch-Hud-main\\Mod\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "E:\\visual studio shared\\NuGetPackages"
