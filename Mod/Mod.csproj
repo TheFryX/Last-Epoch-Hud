@@ -9,6 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Config\ModSettings.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="0Harmony, Version=2.10.2.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>D:\SteamLibrary\steamapps\common\Last Epoch\MelonLoader\net6\0Harmony.dll</HintPath>
@@ -43,6 +47,9 @@
     <Reference Include="MelonLoader">
       <HintPath>D:\SteamLibrary\steamapps\common\Last Epoch\MelonLoader\net6\MelonLoader.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>D:\SteamLibrary\steamapps\common\Last Epoch\UserLibs\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>D:\SteamLibrary\steamapps\common\Last Epoch\MelonLoader\Il2CppAssemblies\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
@@ -60,6 +67,10 @@
   <ItemGroup>
     <Folder Include="Models\" />
     <Folder Include="Utils\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Config\ModSettings.cs" />
   </ItemGroup>
 
 </Project>

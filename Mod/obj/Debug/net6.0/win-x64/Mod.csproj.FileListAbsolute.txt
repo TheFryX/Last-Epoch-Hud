@@ -1,0 +1,256 @@
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Mod.deps.json
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Mod.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Mod.pdb
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\0Harmony.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppInterop.Common.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppInterop.Generator.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppInterop.Runtime.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppLE.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppLE.Telemetry.Client.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2Cppmscorlib.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppSystem.Core.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppSystem.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\MelonLoader.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\UnityEngine.CoreModule.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\UnityEngine.IMGUIModule.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\UnityEngine.InputLegacyModule.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\UnityEngine.UI.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Mono.Cecil.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\AsmResolver.DotNet.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\AsmResolver.PE.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\AsmResolver.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\MonoMod.Backports.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\UnityEngine.PhysicsModule.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppFmodShared.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\UnityEngine.AnimationModule.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\UnityEngine.ParticleSystemModule.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\UnityEngine.AIModule.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Unity.TextMeshPro.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppLE.Networking.Core.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppUniTask.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\UnityEngine.TextRenderingModule.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\UnityEngine.AudioModule.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\UnityEngine.WindModule.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppLE.UI.Controls.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\UnityEngine.UIModule.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppAwesomeTechnologies.VegetationStudioPro.Runtime.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppProBuilderCore-Unity5.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\UnityEngine.DirectorModule.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Unity.Addressables.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\UnityEngine.ClothModule.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Unity.Mathematics.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppLE.Core.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppCinemachine.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Unity.Postprocessing.Runtime.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppCSharp.OperationResult.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\UnityEngine.VideoModule.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppRewired_Core.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppHeathen.ScreenKeyboard.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppPolly.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppJBooth.MicroSplat.Core.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Unity.Collections.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\UnityEngine.TerrainModule.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Unity.Localization.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppDialogueSystem.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Unity.ResourceManager.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppLE.PCG.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppNewtonsoft.Json.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppDOTween.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppPlayFab.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppSystem.Net.Http.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppFMODUnity.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\UnityEngine.UnityWebRequestModule.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppSystem.Xml.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppDOTweenPro.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppTriangleNET.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Unity.Timeline.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\UnityEngine.Physics2DModule.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppRG.ImGui.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppALINE.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppXNode.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppSirenix.Serialization.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Unity.AI.Navigation.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppLE.Telemetry.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppFacepunch.Steamworks.Win64.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppEHRGB.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppStreamChat.Core.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppLidgren.Network.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppMono.Security.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppSystem.Configuration.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\MonoMod.Utils.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\MonoMod.RuntimeDetour.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\bHapticsLib.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\AssetRipper.Primitives.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Tomlet.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\AssetsTools.NET.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Microsoft.Diagnostics.Runtime.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Mono.Cecil.Mdb.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Mono.Cecil.Pdb.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Mono.Cecil.Rocks.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\AsmResolver.PE.File.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppInterop.HarmonySupport.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\UnityEngine.UIElementsModule.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\MonoMod.ILHelpers.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\UnityEngine.TextCoreFontEngineModule.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppSystem.Numerics.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\UnityEngine.TerrainPhysicsModule.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\UnityEngine.AssetBundleModule.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppCommandLine.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Unity.Burst.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppSystem.Xml.Linq.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppLuaInterpreter.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\UnityEngine.UnityWebRequestWWWModule.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppSystem.Runtime.Serialization.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppSystem.Data.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppSirenix.Serialization.Config.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppStreamChat.Libs.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\WebSocketDotNet.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Microsoft.Diagnostics.NETCore.Client.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\UnityEngine.UIElementsNativeModule.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\UnityEngine.TextCoreTextEngineModule.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\UnityEngine.JSONSerializeModule.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\UnityEngine.UnityWebRequestAssetBundleModule.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\UnityEngine.ImageConversionModule.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Il2CppSirenix.Utilities.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\MelonLoader.pdb
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\MelonLoader.xml
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\obj\Debug\net6.0\win-x64\Mod.csproj.AssemblyReference.cache
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\obj\Debug\net6.0\win-x64\Mod.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\obj\Debug\net6.0\win-x64\Mod.AssemblyInfoInputs.cache
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\obj\Debug\net6.0\win-x64\Mod.AssemblyInfo.cs
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\obj\Debug\net6.0\win-x64\Mod.csproj.CoreCompileInputs.cache
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\obj\Debug\net6.0\win-x64\Mod.csproj.Up2Date
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\obj\Debug\net6.0\win-x64\Mod.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\obj\Debug\net6.0\win-x64\refint\Mod.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\obj\Debug\net6.0\win-x64\Mod.pdb
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\obj\Debug\net6.0\win-x64\ref\Mod.dll
+C:\Users\TheFry\Desktop\Last-Epoch-Hud-dev\Mod\bin\Debug\net6.0\win-x64\Newtonsoft.Json.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Mod.deps.json
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Mod.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Mod.pdb
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\0Harmony.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppInterop.Common.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppInterop.Generator.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppInterop.Runtime.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppLE.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppLE.Telemetry.Client.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2Cppmscorlib.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppSystem.Core.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppSystem.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\MelonLoader.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Newtonsoft.Json.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\UnityEngine.CoreModule.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\UnityEngine.IMGUIModule.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\UnityEngine.InputLegacyModule.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\UnityEngine.UI.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Mono.Cecil.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\AsmResolver.DotNet.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\AsmResolver.PE.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\AsmResolver.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\MonoMod.Backports.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\UnityEngine.PhysicsModule.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppFmodShared.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\UnityEngine.AnimationModule.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\UnityEngine.ParticleSystemModule.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\UnityEngine.AIModule.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Unity.TextMeshPro.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppLE.Networking.Core.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppUniTask.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\UnityEngine.TextRenderingModule.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\UnityEngine.AudioModule.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\UnityEngine.WindModule.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppLE.UI.Controls.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\UnityEngine.UIModule.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppAwesomeTechnologies.VegetationStudioPro.Runtime.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppProBuilderCore-Unity5.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\UnityEngine.DirectorModule.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Unity.Addressables.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\UnityEngine.ClothModule.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Unity.Mathematics.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppLE.Core.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppCinemachine.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Unity.Postprocessing.Runtime.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppCSharp.OperationResult.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\UnityEngine.VideoModule.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppRewired_Core.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppHeathen.ScreenKeyboard.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppPolly.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppJBooth.MicroSplat.Core.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Unity.Collections.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\UnityEngine.TerrainModule.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Unity.Localization.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppDialogueSystem.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Unity.ResourceManager.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppLE.PCG.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppNewtonsoft.Json.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppDOTween.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppPlayFab.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppSystem.Net.Http.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppFMODUnity.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\UnityEngine.UnityWebRequestModule.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppSystem.Xml.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppDOTweenPro.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppTriangleNET.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Unity.Timeline.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\UnityEngine.Physics2DModule.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppRG.ImGui.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppALINE.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppXNode.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppSirenix.Serialization.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Unity.AI.Navigation.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppLE.Telemetry.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppFacepunch.Steamworks.Win64.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppEHRGB.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppStreamChat.Core.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppLidgren.Network.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppMono.Security.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppSystem.Configuration.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\MonoMod.Utils.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\MonoMod.RuntimeDetour.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\bHapticsLib.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\AssetRipper.Primitives.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Tomlet.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\AssetsTools.NET.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Microsoft.Diagnostics.Runtime.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Mono.Cecil.Mdb.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Mono.Cecil.Pdb.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Mono.Cecil.Rocks.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\AsmResolver.PE.File.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppInterop.HarmonySupport.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\UnityEngine.UIElementsModule.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\MonoMod.ILHelpers.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\UnityEngine.TextCoreFontEngineModule.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppSystem.Numerics.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\UnityEngine.TerrainPhysicsModule.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\UnityEngine.AssetBundleModule.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppCommandLine.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Unity.Burst.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppSystem.Xml.Linq.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppLuaInterpreter.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\UnityEngine.UnityWebRequestWWWModule.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppSystem.Runtime.Serialization.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppSystem.Data.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppSirenix.Serialization.Config.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppStreamChat.Libs.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\WebSocketDotNet.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Microsoft.Diagnostics.NETCore.Client.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\UnityEngine.UIElementsNativeModule.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\UnityEngine.TextCoreTextEngineModule.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\UnityEngine.JSONSerializeModule.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\UnityEngine.UnityWebRequestAssetBundleModule.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\UnityEngine.ImageConversionModule.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\Il2CppSirenix.Utilities.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\MelonLoader.pdb
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\bin\Debug\net6.0\win-x64\MelonLoader.xml
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\obj\Debug\net6.0\win-x64\Mod.csproj.AssemblyReference.cache
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\obj\Debug\net6.0\win-x64\Mod.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\obj\Debug\net6.0\win-x64\Mod.AssemblyInfoInputs.cache
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\obj\Debug\net6.0\win-x64\Mod.AssemblyInfo.cs
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\obj\Debug\net6.0\win-x64\Mod.csproj.CoreCompileInputs.cache
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\obj\Debug\net6.0\win-x64\Mod.csproj.Up2Date
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\obj\Debug\net6.0\win-x64\Mod.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\obj\Debug\net6.0\win-x64\refint\Mod.dll
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\obj\Debug\net6.0\win-x64\Mod.pdb
+C:\Users\TheFry\Desktop\Nowy folder (3)\Mod\obj\Debug\net6.0\win-x64\ref\Mod.dll
